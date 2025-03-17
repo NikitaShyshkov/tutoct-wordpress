@@ -5,7 +5,7 @@
 /* Mobile styles (up to 991px) */
 @media (max-width: 991px) {
     #nav-menu,
-    #change-icons {
+    #change-icons{
         display: none;
     }
 

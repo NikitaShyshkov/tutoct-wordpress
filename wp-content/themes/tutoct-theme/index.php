@@ -4,21 +4,19 @@
     <div id="block-1" class="w-full h-[678px]">
         <div id="background-image"></div>
 
-        <div class="h-full w-full grid grid-cols-2 gap-[20px] px-[150px]">
+        <div id="efectiv" class="h-full w-full flex gap-[20px] px-[150px]">
             <div class="flex flex-col my-auto">
-                <div class="flex flex-col">
-                    <div class="w-[500px] justify-start">
-                        <span class="text-[#120c38] text-5xl font-bold font-['Nunito'] capitalize">Підвищуйте вашу </span>
-                        <span class="text-[#8a48e6] text-5xl font-bold font-['Nunito'] capitalize">ефективність </span>
-                        <span class="text-[#120c38] text-5xl font-bold font-['Nunito'] capitalize">роботи та навчання</span>
-                    </div>
+                <div id="text-main" class="flex flex-col capitalize">
+                    <span class="text-[#120c38] text-5xl font-bold font-['Nunito'] my-[5px]">Підвищуйте вашу </span>
+                    <span class="text-[#8a48e6] text-5xl font-bold font-['Nunito'] my-[5px]">ефективність </span>
+                    <span class="text-[#120c38] text-5xl font-bold font-['Nunito'] my-[5px]">роботи та навчання</span>
                 </div>
                 <div class="justify-start mt-[40px]">
                     <span class="text-[#120c38] text-xl font-medium font-['Mulish']">Тримайте під контролем усі аспекти вашої роботи: розклад, пошук курсів, учнів і аналітику, забувши про хаос, разом з </span>
                     <span class="text-[#120c38] text-xl font-bold font-['Mulish']">TUTOCT</span>
                     <span class="text-[#120c38] text-xl font-medium font-['Mulish']"> !</span>
                 </div>
-                <div class="flex justify-between mt-[120px]">
+                <div id="buttons-main" class="flex justify-between mt-[120px]">
                     <button class="h-14 px-10 py-3 bg-[#8a4ae6] rounded-2xl overflow-hidden text-center text-white text-2xl font-medium font-['Nunito']">Перейти в систему
                     </button>
                     <button class="button-secondary h-14 px-10 py-3 bg-white rounded-2xl border border-[#8a48e6] text-[#8a48e6] text-2xl font-normal font-['Nunito']">Перейти в Instagram
@@ -26,7 +24,7 @@
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="w-[596px] h-[609px] relative mb-0 mt-auto">
+                <div id="baba" class="w-[596px] h-[609px] relative mb-0 mt-auto">
                     <div class="w-[596px] h-[609px] left-0 top-0 absolute">
                         <div class="w-[596px] h-[594px] left-0 top-0 absolute">
                             <div class="w-[596px] h-[594px] left-0 top-0 absolute overflow-hidden">
@@ -54,7 +52,7 @@
                         </div>
                         <img class="w-[490.86px] h-[592px] left-[71px] absolute origin-top-left" src="<?php echo get_template_directory_uri(); ?>/assets/images/woman-1.png" />
                     </div>
-                    <div class="w-[70px] h-[70px] left-[361px] top-[500px] absolute">
+                    <div class="w-[70px] h-[70px] left-[370px] top-[470px] absolute">
                         <div class="w-[70px] h-[70px] left-0 top-0 absolute bg-white rounded-[69px]"></div>
                         <div data-svg-wrapper data-fill="Off" data-plus="Off" data-property 1="Task" class="left-[13.75px] top-[13.75px] absolute">
                             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,6 +87,159 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="bg-[#F6EEFF] h-[838px] w-full relative">
+        <div id="volna-bg"></div>
+
+        <div id="block-2" class="h-full w-full flex justify-between gap-[20px] px-[150px] pt-[150px]">
+            <!-- Images -->
+            <div class="w-[512px] h-[512px] relative">
+                <img class="w-[156px] max-h-[512px] left-[0px] top-[0px] absolute rounded-bl-[200px] rounded-tr-[20px] rounded-tl-[20px] rounded-br-[20px]" src="https://placehold.co/156x512" />
+                <img class="w-[156px] h-[246px] left-[176px] top-[0px] absolute rounded-tr-[20px] rounded-bl-[20px] rounded-tl-[200px] rounded-br-[20px]" src="https://placehold.co/156x246" />
+                <img class="w-[156px] h-[246px] left-[176px] top-[266px] absolute rounded-tl-[20px] rounded-br-[200px] rounded-bl-[20px] rounded-tr-[20px]" src="https://placehold.co/156x246" />
+                <img class="w-[156px] h-[512px] left-[352px] top-[0px] absolute rounded-tr-[200px] rounded-tl-[20px] rounded-bl-[20px] rounded-br-[20px]" src="https://placehold.co/156x512" />
+            </div>
+            <!-- Text + Oct -->
+            <div class="z-10 h-full flex flex-col justify-between items-end">
+                <div>
+                    <div class="text-center justify-start text-white text-[32px] font-bold font-['Nunito'] capitalize">Хто ми?</div>
+                    <div class="w-[684px] justify-start"><span class="text-white text-xl font-bold font-['Mulish']">TUTOCT</span><span class="text-white text-xl font-normal font-['Mulish']"> — це сучасна CRM-система, створена спеціально для репетиторів і навчальних центрів. Як восьминіг, що одночасно виконує кілька завдань, наша платформа допомагає автоматизувати рутину та ефективно керувати навчальним процесом.</span></div>
+                </div>
+                <img class="w-[424px] h-[421px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/octopus-main.png" alt="octopus">
+            </div>
+        </div>
+    </div>
+    <div class="bg-[#F6EEFF] w-full h-full pt-[78px]">
+        <div class="h-12 text-center mx-auto text-[#120c38] text-4xl font-bold font-['Nunito'] capitalize">Наші ключові Можливості</div>
+        <div class="text-center mx-auto py-[40px] text-[#8a48e6] text-xl font-medium font-['Mulish']">TUTOCT пропонує репетиторам все необхідне для зручного та ефективного управління своєю діяльністю.</div>
+        <div id="possibilities" class="flex flex-wrap justify-center gap-5 max-w-[1300px] mx-auto">
+            <!-- card 1 -->
+            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 flex-shrink-0">
+                        <div data-svg-wrapper class="relative">
+                            <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.6185 8.78296C20.1417 4.32525 26.301 4.19025 28.107 8.37795L28.2599 8.78551L30.3155 14.7971C30.7866 16.1757 31.5479 17.4373 32.548 18.4968C33.5481 19.5562 34.7638 20.3888 36.1131 20.9385L36.6658 21.1448L42.6774 23.1979C47.1351 24.7212 47.2701 30.8805 43.0849 32.6865L42.6774 32.8393L36.6658 34.895C35.2867 35.3657 34.0246 36.1269 32.9647 37.127C31.9048 38.1272 31.0718 39.343 30.5218 40.6925L30.3155 41.2427L28.2624 47.2568C26.7391 51.7145 20.5799 51.8495 18.7764 47.6644L18.6185 47.2568L16.5654 41.2453C16.0946 39.8662 15.3334 38.6041 14.3333 37.5442C13.3332 36.4843 12.1173 35.6512 10.7678 35.1013L10.2176 34.895L4.20605 32.8419C-0.254205 31.3186 -0.38921 25.1593 3.79849 23.3559L4.20605 23.1979L10.2176 21.1448C11.5963 20.6737 12.8579 19.9125 13.9173 18.9123C14.9767 17.9122 15.8094 16.6965 16.359 15.3473L16.5654 14.7971L18.6185 8.78296ZM23.4404 10.4285L21.3873 16.44C20.67 18.5423 19.5031 20.4629 17.9677 22.0682C16.4324 23.6735 14.5656 24.9248 12.4974 25.735L11.8606 25.9668L5.84904 28.0199L11.8606 30.073C13.9628 30.7903 15.8835 31.9573 17.4887 33.4926C19.094 35.0279 20.3453 36.8947 21.1555 38.9629L21.3873 39.5998L23.4404 45.6113L25.4935 39.5998C26.2109 37.4975 27.3778 35.5769 28.9131 33.9716C30.4485 32.3663 32.3152 31.115 34.3835 30.3048L35.0203 30.0755L41.0318 28.0199L35.0203 25.9668C32.918 25.2495 30.9974 24.0825 29.3921 22.5472C27.7869 21.0119 26.5356 19.1451 25.7253 17.0769L25.4961 16.44L23.4404 10.4285ZM43.8185 4.60259e-07C44.2951 -6.01083e-07 44.7621 0.133676 45.1664 0.385838C45.5708 0.638 45.8963 0.998534 46.106 1.42647L46.2283 1.7245L47.1198 4.33799L49.7358 5.22953C50.2134 5.39178 50.632 5.69215 50.9387 6.09258C51.2454 6.49301 51.4263 6.97547 51.4585 7.47882C51.4907 7.98217 51.3727 8.48374 51.1196 8.91998C50.8664 9.35621 50.4894 9.70747 50.0364 9.92923L49.7358 10.0515L47.1223 10.943L46.2308 13.5591C46.0683 14.0365 45.7677 14.455 45.3671 14.7614C44.9665 15.0678 44.484 15.2484 43.9807 15.2803C43.4773 15.3122 42.9758 15.194 42.5398 14.9407C42.1037 14.6873 41.7526 14.3102 41.5311 13.8571L41.4088 13.5591L40.5173 10.9456L37.9013 10.054C37.4237 9.8918 37.005 9.59143 36.6984 9.191C36.3917 8.79057 36.2108 8.30811 36.1786 7.80476C36.1464 7.30142 36.2644 6.79984 36.5175 6.36361C36.7707 5.92737 37.1477 5.57611 37.6007 5.35435L37.9013 5.23208L40.5147 4.34054L41.4063 1.7245C41.578 1.22122 41.903 0.784324 42.3356 0.475062C42.7682 0.165799 43.2868 -0.000319125 43.8185 4.60259e-07Z" fill="#8A48E6" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Автоматизація через ШІ</div>
+                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">Використовує ШІ для автоматичної перевірки тестів, генерації навчальних матеріалів та створення онлайн-презентацій, що значно спрощує роботу репетиторів.</div>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 flex-shrink-0">
+                        <div data-svg-wrapper class="relative">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.6666 7.00004H39.6666M18.6666 21H39.6666M21 35H39.6666M2.33331 30.3334C2.33331 29.0957 2.82498 27.9087 3.70015 27.0335C4.57532 26.1584 5.7623 25.6667 6.99998 25.6667C8.23766 25.6667 9.42464 26.1584 10.2998 27.0335C11.175 27.9087 11.6666 29.0957 11.6666 30.3334C11.6666 31.7124 10.5 32.6667 9.33331 33.8334L2.33331 39.6667H11.6666M6.99998 16.3334V2.33337L2.33331 7.00004" stroke="#8A48E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Автоматизація через ШІ</div>
+                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">Використовує ШІ для автоматичної перевірки тестів, генерації навчальних матеріалів та створення онлайн-презентацій, що значно спрощує роботу репетиторів.</div>
+                </div>
+            </div>
+            <!-- card 3 -->
+            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 flex-shrink-0">
+                        <div data-svg-wrapper class="relative">
+                            <svg width="46" height="40" viewBox="0 0 46 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.66667 2.33337H16L23 9.33337H39.3333C40.571 9.33337 41.758 9.82504 42.6332 10.7002C43.5083 11.5754 44 12.7624 44 14V32.6667C44 33.9044 43.5083 35.0914 42.6332 35.9665C41.758 36.8417 40.571 37.3334 39.3333 37.3334H6.66667C5.42899 37.3334 4.242 36.8417 3.36683 35.9665C2.49167 35.0914 2 33.9044 2 32.6667V7.00004C2 5.76236 2.49167 4.57538 3.36683 3.70021C4.242 2.82504 5.42899 2.33337 6.66667 2.33337Z" stroke="#8A48E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Створення власних матеріалів</div>
+                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">Легко створюйте персоналізовані навчальні матеріали для кожного курсу, використовуючи зручні інструменти TUTOCT, адаптуючи їх до потреб учнів.</div>
+                </div>
+            </div>
+            <!-- card 4 -->
+            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 flex-shrink-0">
+                        <div data-svg-wrapper class="relative">
+                            <svg width="42" height="46" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30.3333 2V11.3333M11.6667 2V11.3333M2.33333 20.6667H39.6667M9.33333 27.6667H9.36366M16.3567 27.6667H16.3683M23.3567 27.6667H23.3683M30.3683 27.6667H30.38M23.3683 34.6667H23.38M9.35666 34.6667H9.36833M16.3567 34.6667H16.3683M2.33333 11.3333C2.33333 10.0957 2.82499 8.90867 3.70016 8.0335C4.57533 7.15833 5.76232 6.66667 6.99999 6.66667H35C36.2377 6.66667 37.4247 7.15833 38.2998 8.0335C39.175 8.90867 39.6667 10.0957 39.6667 11.3333V39.3333C39.6667 40.571 39.175 41.758 38.2998 42.6332C37.4247 43.5083 36.2377 44 35 44H6.99999C5.76232 44 4.57533 43.5083 3.70016 42.6332C2.82499 41.758 2.33333 40.571 2.33333 39.3333V11.3333Z" stroke="#8A48E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Гнучкий розклад</div>
+                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">Організуйте уроки в зручний для вас час завдяки функції гнучкого розкладу. Легко змінюйте час і дати занять, автоматично синхронізуючи розклад з іншими учнями.</div>
+                </div>
+            </div>
+            <!-- card 5 -->
+            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 relative overflow-hidden">
+                        <div data-svg-wrapper class="top-[9.33px] absolute">
+                            <svg width="46" height="44" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.1667 13.9999H17.19M28.8333 13.9999H28.8567M37 2.33325C38.8565 2.33325 40.637 3.07075 41.9497 4.3835C43.2625 5.69626 44 7.47674 44 9.33325V27.9999C44 29.8564 43.2625 31.6369 41.9497 32.9497C40.637 34.2624 38.8565 34.9999 37 34.9999H25.3333L13.6667 41.9999V34.9999H9C7.14348 34.9999 5.36301 34.2624 4.05025 32.9497C2.7375 31.6369 2 29.8564 2 27.9999V9.33325C2 7.47674 2.7375 5.69626 4.05025 4.3835C5.36301 3.07075 7.14348 2.33325 9 2.33325H37Z" stroke="#8A48E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div data-svg-wrapper class="left-[15.17px] top-[30.33px] absolute">
+                            <svg width="16" height="7" viewBox="0 0 16 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.16669 2.33325C2.92707 3.10931 3.83467 3.72585 4.83632 4.14675C5.83797 4.56764 6.91353 4.78444 8.00002 4.78444C9.08651 4.78444 10.1621 4.56764 11.1637 4.14675C12.1654 3.72585 13.073 3.10931 13.8334 2.33325" stroke="#8A48E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Аналітика та звітність</div>
+                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">Оцінюйте прогрес учнів за допомогою детальної аналітики, що надає вам зрозумілі графіки і статистику, допомагаючи коригувати навчальний процес та досягати результатів.</div>
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 flex-shrink-0">
+                        <div data-svg-wrapper class="relative">
+                            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M44 44L30 30M2 18.3333C2 20.4783 2.42247 22.6022 3.2433 24.5838C4.06413 26.5655 5.26723 28.3661 6.78392 29.8827C8.30061 31.3994 10.1012 32.6025 12.0828 33.4234C14.0645 34.2442 16.1884 34.6667 18.3333 34.6667C20.4783 34.6667 22.6022 34.2442 24.5838 33.4234C26.5655 32.6025 28.3661 31.3994 29.8827 29.8827C31.3994 28.3661 32.6025 26.5655 33.4234 24.5838C34.2442 22.6022 34.6667 20.4783 34.6667 18.3333C34.6667 16.1884 34.2442 14.0645 33.4234 12.0828C32.6025 10.1012 31.3994 8.30061 29.8827 6.78392C28.3661 5.26723 26.5655 4.06413 24.5838 3.2433C22.6022 2.42247 20.4783 2 18.3333 2C16.1884 2 14.0645 2.42247 12.0828 3.2433C10.1012 4.06413 8.30061 5.26723 6.78392 6.78392C5.26723 8.30061 4.06413 10.1012 3.2433 12.0828C2.42247 14.0645 2 16.1884 2 18.3333Z" stroke="#8A48E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Зручний пошук репетиторів</div>
+                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">Використовуйте зручні фільтри для пошуку та сортування, щоб швидко знаходити викладачів за спеціалізацією, рівнем та відгуками.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-[#F6EEFF] w-full h-full py-[78px]">
+        <div class="h-11 text-center text-[#120c38] text-[32px] font-bold font-['Nunito'] capitalize">Наша мета</div>
+        <div class="py-[40px] text-center text-[#8a48e6] text-xl font-medium font-['Mulish']">TUTOCT прагне зробити роботу репетиторів комфортною, ефективною та сучасною.</div>
+
+        <div id="meta" class="h-full w-full flex justify-around items-center gap-[20px] px-[150px]">
+            <div class="flex flex-col gap-10">
+                <div class="w-[684px] justify-start text-[#120c38] text-[15px] font-normal font-['Mulish']">Наше завдання – автоматизувати рутину, спростити організаційні процеси та дати викладачам більше часу для якісного навчання студентів. Замість витрачання годин на адміністрування, ви зможете зосередитися на головному – передачі знань та розвитку своїх учнів!</div>
+                <div class="flex gap-[18px]">
+                    <div class="w-[216px] h-[131px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
+                        <div class="text-center text-[#120c38] text-[32px] font-bold font-['Nunito']">1000+</div>
+                        <div class="text-center text-[#827ead] text-[15px] font-normal font-['Mulish'] capitalize">відповідальних репетиторів</div>
+                    </div>
+                    <div class="w-[216px] h-[131px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
+                        <div class="text-center text-[#120c38] text-[32px] font-bold font-['Nunito']">4.5</div>
+                        <div class="text-center text-[#827ead] text-[15px] font-normal font-['Mulish'] capitalize">Оцінка клієнтів</div>
+                    </div>
+                    <div class="w-[216px] h-[131px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
+                        <div class="text-center text-[#120c38] text-[32px] font-bold font-['Nunito']">30%</div>
+                        <div class="text-center text-[#827ead] text-[15px] font-normal font-['Mulish'] capitalize">зекономленого часу</div>
+                    </div>
+                </div>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/meta-image.png" alt="">
         </div>
     </div>
 </main>
