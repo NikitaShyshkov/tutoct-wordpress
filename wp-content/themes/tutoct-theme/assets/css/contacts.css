@@ -1,0 +1,18 @@
+@media (max-width: 1200px) {
+    main{
+        padding: 16px !important;
+    }
+    #block-2{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 767px) {
+    #block-2-1{
+        display: flex;
+        flex-direction: column;
+    }
+    #block-oct{
+        display: none;
+    }
+}
