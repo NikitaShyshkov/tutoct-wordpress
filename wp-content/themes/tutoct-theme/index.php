@@ -16,7 +16,7 @@
                     <span class="text-[#120c38] text-xl font-bold font-['Mulish']">TUTOCT</span>
                     <span class="text-[#120c38] text-xl font-medium font-['Mulish']"> !</span>
                 </div>
-                <div id="buttons-main" class="flex justify-between mt-[120px]">
+                <div id="buttons-main" class="flex justify-start gap-5 mt-[120px]">
                     <button class="h-14 px-10 py-3 bg-[#8a4ae6] rounded-2xl overflow-hidden text-center text-white text-2xl font-medium font-['Nunito']">Перейти в систему
                     </button>
                     <button class="button-secondary h-14 px-10 py-3 bg-white rounded-2xl border border-[#8a48e6] text-[#8a48e6] text-2xl font-normal font-['Nunito']">Перейти в Instagram
@@ -223,8 +223,8 @@
 
         <div id="meta" class="h-full w-full flex justify-around items-center gap-[20px] px-[150px]">
             <div class="flex flex-col gap-10">
-                <div class="w-[684px] justify-start text-[#120c38] text-[15px] font-normal font-['Mulish']">Наше завдання – автоматизувати рутину, спростити організаційні процеси та дати викладачам більше часу для якісного навчання студентів. Замість витрачання годин на адміністрування, ви зможете зосередитися на головному – передачі знань та розвитку своїх учнів!</div>
-                <div class="flex gap-[18px]">
+                <div class="text-[#120c38] max-w-[685px] text-center text-[15px] font-normal font-['Mulish']">Наше завдання – автоматизувати рутину, спростити організаційні процеси та дати викладачам більше часу для якісного навчання студентів. Замість витрачання годин на адміністрування, ви зможете зосередитися на головному – передачі знань та розвитку своїх учнів!</div>
+                <div id="meta-blocks-3" class=" flex gap-[18px]">
                     <div class="w-[216px] h-[131px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
                         <div class="text-center text-[#120c38] text-[32px] font-bold font-['Nunito']">1000+</div>
                         <div class="text-center text-[#827ead] text-[15px] font-normal font-['Mulish'] capitalize">відповідальних репетиторів</div>
@@ -239,7 +239,7 @@
                     </div>
                 </div>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/meta-image.png" alt="">
+            <img id="meta-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/meta-image.png" alt="">
         </div>
     </div>
 </main>

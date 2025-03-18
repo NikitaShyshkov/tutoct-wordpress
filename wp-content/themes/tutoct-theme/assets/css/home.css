@@ -37,6 +37,15 @@
         flex-direction: column;
         gap: 20px;
     }
+    #meta{
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 16px !important;
+        justify-content: center !important;
+    }
+    #meta-img{
+        width: 300px;
+    }
     #efectiv{
         padding: 16px;
         text-align: center;
@@ -51,5 +60,11 @@
         padding-top: 0;
         align-items: center !important;
         width: 100%;
+    }
+    #meta-blocks-3{
+        justify-content: center;
+    }
+    #meta-blocks-3 div{
+        width: auto !important;
     }
 }

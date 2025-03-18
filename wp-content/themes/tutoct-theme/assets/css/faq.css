@@ -1,0 +1,49 @@
+.icon-wrapper {
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper.active {
+    transform: rotate(90deg);
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+.header:hover{
+    background-color: #8A48E6;
+    border-radius: 15px;
+}
+.header:hover div{
+    color: white;
+}
+.header:hover path{
+    stroke: white;
+}
+
+#contact-bg{
+    background-image: url('../images/patterns/pattern4.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/patterns/pattern4.png');
+    background-size: 370px;
+    background-repeat: repeat;
+    opacity: 10%;
+}
+
+@media (max-width: 991px) {
+    main{
+        padding: 16px !important;
+    }
+    #contact{
+        flex-direction: column;
+        padding: 40px;
+        gap: 40px;
+    }
+}
