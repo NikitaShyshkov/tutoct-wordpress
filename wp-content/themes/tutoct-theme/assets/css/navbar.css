@@ -63,3 +63,11 @@ nav>.active{
 nav>.active>div{
     background-color: #8a48e6 !important;
 }
+.active {
+    color: #8a48e6; /* Цвет для активной ссылки */
+    font-weight: 600; /* Полужирный шрифт */
+}
+
+.active div {
+    background-color: #8a48e6; /* Цвет полоски под активной ссылкой */
+}

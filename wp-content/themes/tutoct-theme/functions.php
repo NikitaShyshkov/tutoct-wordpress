@@ -21,6 +21,10 @@ function tutoct_theme_enqueue_styles() {
     if (is_page('contacts')) {
         wp_enqueue_style('contacts-style', get_template_directory_uri() . '/assets/css/contacts.css');
     }
+
+    if (is_page('price')) {
+        wp_enqueue_style('price-style', get_template_directory_uri() . '/assets/css/price.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'tutoct_theme_enqueue_styles');
 

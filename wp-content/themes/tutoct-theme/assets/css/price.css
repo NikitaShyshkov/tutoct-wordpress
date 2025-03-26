@@ -1,0 +1,40 @@
+#block-2{
+    background-image: url('../images/volna-1.png');
+    background-repeat: repeat;
+}
+ul{
+    list-style: disc !important;
+    list-style-position: inside !important;
+}
+
+@media (max-width: 991px) {
+    #block-1,
+    #block-2,
+    #block-3{
+        padding: 16px !important;
+    }
+    #block-2,
+    #block-3{
+        --tw-translate-y: 0px;
+    }
+    #oct-main{
+        display: none;
+    }
+    #price-blocks{
+        flex-direction: column;
+    }
+    #cards-grid{
+        display: flex;
+        flex-direction: column;
+    }
+    #block-3-1{
+        flex-direction: column;
+        width: 100%;
+    }
+    .card{
+        max-width: 100% !important;
+    }
+    #block-3-1-1{
+        width: 100%;
+    }
+}
