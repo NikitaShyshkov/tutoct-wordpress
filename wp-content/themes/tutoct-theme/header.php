@@ -26,30 +26,30 @@
         <img id="logo" class="w-[68px] h-16 m-[50px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-navbar.png" alt="Logo" />
 
         <!-- Navigation -->
-        <nav id="nav-menu" class="flex items-center justify-center gap-12 mr-[62px] md:flex md:items-center md:gap-12">
-            <a href="/" class="<?php echo is_home() ? 'active' : ''; ?> text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
-                Про нас
-                <div class="w-20 h-2.5 m-auto rounded-tl-[18px] rounded-tr-[19px]"></div>
+        <nav id="nav-menu" class="flex items-center justify-center h-full gap-12 mr-[62px] md:flex md:items-center md:gap-12">
+            <a href="/" class="<?php echo is_home() ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+                <p class="m-auto">Про нас</p>
+                <div class="w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/blog" class="<?php echo is_page('blog') ? 'active' : ''; ?> text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
-                Блог
-                <div class="w-20 h-2.5 m-auto rounded-tl-[18px] rounded-tr-[19px]"></div>
+            <a href="/blog" class="<?php echo is_page('blog') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+                <p class="m-auto">Блог</p>
+                <div class="w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/contacts" class="<?php echo is_page('contacts') ? 'active' : ''; ?> text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
-                Контакти
-                <div class="w-20 h-2.5 m-auto rounded-tl-[18px] rounded-tr-[19px]"></div>
+            <a href="/contacts" class="<?php echo is_page('contacts') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+                <p class="m-auto">Контакти</p>
+                <div class="w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/price" class="<?php echo is_page('price') ? 'active' : ''; ?> text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
-                Ціни
-                <div class="w-20 h-2.5 m-auto rounded-tl-[18px] rounded-tr-[19px]"></div>
+            <a href="/price" class="<?php echo is_page('price') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+                <p class="m-auto">Ціни</p>
+                <div class="w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/reviews" class="<?php echo is_page('reviews') ? 'active' : ''; ?> text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
-                Відгуки
-                <div class="w-20 h-2.5 m-auto rounded-tl-[18px] rounded-tr-[19px]"></div>
+            <a href="/reviews" class="<?php echo is_page('reviews') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+                <p class="m-auto">Відгуки</p>
+                <div class="w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/faq" class="<?php echo is_page('faq') ? 'active' : ''; ?> text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
-                Питання відповідь
-                <div class="w-20 h-2.5 m-auto rounded-tl-[18px] rounded-tr-[19px]"></div>
+            <a href="/faq" class="<?php echo is_page('faq') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+                <p class="m-auto">Питання відповідь</p>
+                <div class="w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
         </nav>
 

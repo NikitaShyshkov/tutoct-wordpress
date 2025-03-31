@@ -187,4 +187,5 @@ function render_reviews_page() {
     </div>
     <?php
 }
+add_theme_support('post-thumbnails');
 ?>

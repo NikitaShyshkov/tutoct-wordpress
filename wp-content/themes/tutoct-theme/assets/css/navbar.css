@@ -71,3 +71,14 @@ nav>.active>div{
 .active div {
     background-color: #8a48e6; /* Цвет полоски под активной ссылкой */
 }
+
+figure>img {
+    border-radius: 16px;
+}
+#post-content p {
+    margin-bottom: 20px; /* Отступ снизу каждого абзаца */
+}
+#post-content h2 {
+    margin-bottom: 20px;
+    margin-top: 20px; 
+}
