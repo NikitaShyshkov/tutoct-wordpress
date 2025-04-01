@@ -30,6 +30,14 @@ function tutoct_theme_enqueue_styles() {
         wp_enqueue_style('reviews-style', get_template_directory_uri() . '/assets/css/reviews.css');
         wp_enqueue_script('reviews-script', get_template_directory_uri() . '/assets/js/reviews.js', array('jquery'), null, true);
     }
+
+    if (is_single()) {
+        wp_enqueue_style('single-style', get_template_directory_uri() . '/assets/css/single.css');
+    }
+
+    if (is_page('blog')) {
+        wp_enqueue_style('blog-style', get_template_directory_uri() . '/assets/css/blog.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'tutoct_theme_enqueue_styles');
 

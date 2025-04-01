@@ -1,0 +1,12 @@
+@media (max-width: 1200px) {
+    main{
+        padding: 16px !important;
+    }
+}
+#sort-posts {
+    cursor: pointer;
+}
+
+#sort-posts:focus {
+    outline-color: #120c38; /* Цвет обводки при фокусе */
+}

@@ -1,0 +1,89 @@
+@media (max-width: 1200px) {
+    #thumbnail-img{
+        height: 300px;
+    }
+}
+@media (max-width: 991px) {
+    #thumbnail-img{
+        height: 200px;
+    }
+    #single-content{
+        padding: 16px;
+    }
+    figure>img {
+        max-width: 400px;
+    }
+    #button-back{
+        left: 16px;
+        top: 16px;
+    }
+}
+figure>img {
+    border-radius: 16px;
+}
+#post-content p {
+    margin-bottom: 20px; /* Отступ снизу каждого абзаца */
+}
+#post-content h2 {
+    margin-bottom: 20px;
+    margin-top: 20px; 
+}
+
+/* Общий стиль формы */
+.comment-form-styled {
+    margin-top: 20px;
+}
+
+/* Поля формы */
+.comment-form-field {
+    margin-bottom: 15px; /* Отступ между полями */
+}
+
+.comment-form-field input,
+.comment-form-field textarea {
+    width: 100%;
+    padding: 12px; /* Увеличенные внутренние отступы */
+    border-radius: 16px; /* Скругленные углы */
+    outline: 1px solid #d7d7d7; /* Граница по умолчанию */
+    font-family: 'Mulish', sans-serif; /* Ваш шрифт */
+    color: #120c38; /* Цвет текста */
+    transition: outline-color 0.3s ease; /* Плавный переход для фокуса */
+}
+
+.comment-form-field input:focus,
+.comment-form-field textarea:focus {
+    outline: 1px solid #120c38; /* Граница при фокусе */
+}
+
+/* Placeholder */
+.comment-form-field input::placeholder,
+.comment-form-field textarea::placeholder {
+    color: #827ead; /* Цвет placeholder */
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Кнопка отправки */
+.comment-form-styled .form-submit button {
+    background-color: #120c38;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 24px; /* Более скругленные углы */
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form-styled .form-submit button:hover {
+    background-color: #2a1e5a; /* Темнее при наведении */
+}
+
+/* Заголовок формы */
+.comment-respond .comment-reply-title {
+    color: #120c38;
+    font-family: 'Mulish', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
