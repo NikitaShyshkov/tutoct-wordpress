@@ -1,0 +1,57 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-wrapper {
+    overflow: hidden; /* Скрываем лишние карточки */
+    position: relative;
+    user-select: none; /* Отключаем выделение текста при перетаскивании */
+}
+
+#carousel {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease-in-out; /* Плавный переход для transform */
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    margin: 0 8px; /* Отступы между карточками */
+}
+
+/* Стили для перетаскивания */
+.carousel-wrapper.grabbing {
+    cursor: grabbing;
+}
+
+.carousel-wrapper {
+    cursor: grab;
+}
+@media (max-width: 1400px) {
+    #octopus-img{
+        display: none;
+    }
+}
+@media (max-width: 1100px) {
+    #block-top{
+        padding: 16px !important;
+    }
+    #block-top-rev{
+        flex-direction: column;
+    }
+    .rev-card-123{
+        max-width: 100px;
+    }
+    .carousel-buttons{
+        display: none;
+    }
+    .review-card {
+        width: 300px !important; 
+        align-items: center;
+    }
+    .name-stars-flex{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}

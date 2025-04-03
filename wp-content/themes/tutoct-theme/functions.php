@@ -29,6 +29,11 @@ function tutoct_theme_enqueue_styles() {
     if (is_page('reviews')) {
         wp_enqueue_style('reviews-style', get_template_directory_uri() . '/assets/css/reviews.css');
         wp_enqueue_script('reviews-script', get_template_directory_uri() . '/assets/js/reviews.js', array('jquery'), null, true);
+        // Передаём данные в JavaScript
+        wp_localize_script('reviews-script', 'ajax_object', array(
+            'ajax_url' => admin_url('admin-ajax.php')
+        ));
+        
     }
 
     if (is_single()) {
@@ -196,4 +201,39 @@ function render_reviews_page() {
     <?php
 }
 add_theme_support('post-thumbnails');
+add_action('wp_ajax_submit_review_ajax', 'handle_submit_review_ajax');
+add_action('wp_ajax_nopriv_submit_review_ajax', 'handle_submit_review_ajax');
+
+function handle_submit_review_ajax() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'reviews';
+
+    // Проверяем, что все данные переданы
+    if (empty($_POST['author_name']) || empty($_POST['author_role']) || empty($_POST['rating']) || empty($_POST['review_text'])) {
+        wp_send_json_error(array('message' => 'Все поля обязательны для заполнения.'));
+    }
+
+    $author_name = sanitize_text_field($_POST['author_name']);
+    $author_role = sanitize_text_field($_POST['author_role']);
+    $rating = intval($_POST['rating']);
+    $review_text = sanitize_textarea_field($_POST['review_text']);
+
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'author_name' => $author_name,
+            'author_role' => $author_role,
+            'rating' => $rating,
+            'review_text' => $review_text,
+            'created_at' => current_time('mysql')
+        ),
+        array('%s', '%s', '%d', '%s', '%s')
+    );
+
+    if ($result !== false) {
+        wp_send_json_success();
+    } else {
+        wp_send_json_error(array('message' => 'Ошибка при добавлении отзыва: ' . $wpdb->last_error));
+    }
+}
 ?>

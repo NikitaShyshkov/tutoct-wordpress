@@ -4,19 +4,18 @@ Template Name: Reviews
 */
 get_header();
 ?>
-
 <main class="bg-[#F6EEFF] h-full w-full flex flex-col">
-    <div id="block-top" class="flex justify-between py-10 px-[150px]">
+    <div id="block-top" class="flex justify-between py-10 px-[150px] overflow-hidden">
         <div>
             <div class="max-w-[880px] text-black text-5xl font-bold font-['Nunito']">Більше 1000 гарних відгуків від користувачів!</div>
-            <div class="flex gap-5 my-[50px] relative">
-                <div class="w-[420px] h-[333.31px] flex flex-col justify-center items-center gap-[10px] bg-white rounded-[20px] z-10">
+            <div id="block-top-rev" class="flex gap-5 my-[50px] relative">
+                <div class="rev-card-123 max-w-[420px] w-full h-[333.31px] flex flex-col justify-center items-center gap-[10px] bg-white rounded-[20px] z-10">
                     <div class="text-[#8a48e6] text-5xl font-bold font-['Nunito']">1563</div>
                     <div class="text-[#120c38] text-[32px] font-bold font-['Nunito']">Відгуків</div>
                 </div>
                 <img id="asset-small" class="absolute -top-[37px] left-[375px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/reviews/Asset-small.svg" alt="">
                 <img id="asset-big" class="absolute -top-[106px] left-[-150px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/reviews/Asset-big.svg" alt="">
-                <div class="w-[420px] h-[333.31px] flex flex-col justify-center items-center gap-[10px] bg-white rounded-[20px]">
+                <div class="rev-card-123 max-w-[420px] w-full h-[333.31px] flex flex-col justify-center items-center gap-[10px] bg-white rounded-[20px]">
                     <!-- Stars -->
                     <div class="w-[270px] h-[50px] flex justify-center gap-2">
                         <div data-fill="On" data-plus="Off" data-property-1="Star" class="overflow-hidden">
@@ -59,50 +58,49 @@ get_header();
                 </div>
             </div>
         </div>
-        <img class="w-[325px] h-[501px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/oct-price-main.png" alt="">
+        <img id="octopus-img" class="w-[325px] h-[501px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/oct-price-main.png" alt="">
     </div>
     <!-- Отзывы -->
-    <div class="relative w-full max-w-5xl mx-auto">
+    <div class="relative w-full carousel-container">
         <!-- Контейнер карусели -->
-        <div class="overflow-hidden">
-            <?php 
-                global $wpdb;
-                $table_name = $wpdb->prefix . 'reviews';
-                $reviews = $wpdb->get_results("SELECT * FROM $table_name ORDER BY created_at DESC");?>
-            <div id="carousel" class="flex transition-transform duration-500 ease-in-out" data-total-slides="<?php echo count($reviews) ? : 1; ?>">
+        <div class="carousel-wrapper">
+            <?php
+            global $wpdb;
+            $table_name = $wpdb->prefix . 'reviews';
+            $reviews = $wpdb->get_results("SELECT * FROM $table_name ORDER BY created_at DESC");
+            ?>
+            <div id="carousel" class="flex transition-transform duration-500 ease-in-out" data-total-slides="<?php echo count($reviews) ?: 1; ?>">
                 <?php
                 if ($reviews) {
-                    foreach ($reviews as $review) {
+                    foreach ($reviews as $index => $review) {
                         // Генерируем звёзды на основе рейтинга
                         $stars_html = '';
                         for ($i = 1; $i <= 5; $i++) {
                             if ($i <= $review->rating) {
-                                // Заполненная звезда
                                 $stars_html .= '
-                                <div data-fill="On" data-plus="Off" data-property-1="Star" class="overflow-hidden">
-                                    <div data-svg-wrapper>
-                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.28771 8.81846L1.31271 9.97471L1.17146 10.0035C0.957634 10.0602 0.762704 10.1727 0.606576 10.3295C0.450447 10.4862 0.338715 10.6816 0.282788 10.8956C0.226861 11.1097 0.228744 11.3347 0.288245 11.5478C0.347745 11.7609 0.462731 11.9544 0.62146 12.1085L6.39896 17.7322L5.03646 25.676L5.02021 25.8135C5.00712 26.0346 5.05304 26.2553 5.15327 26.4528C5.2535 26.6504 5.40444 26.8178 5.59063 26.9378C5.77682 27.0579 5.99157 27.1263 6.2129 27.1361C6.43422 27.1459 6.65417 27.0966 6.85021 26.9935L13.9827 23.2435L21.099 26.9935L21.224 27.051C21.4303 27.1322 21.6545 27.1571 21.8737 27.1232C22.0928 27.0892 22.2989 26.9975 22.471 26.8575C22.643 26.7176 22.7747 26.5344 22.8525 26.3268C22.9304 26.1191 22.9516 25.8945 22.914 25.676L21.5502 17.7322L27.3302 12.1072L27.4277 12.001C27.567 11.8294 27.6583 11.624 27.6924 11.4057C27.7264 11.1874 27.702 10.9639 27.6216 10.7581C27.5412 10.5523 27.4076 10.3715 27.2346 10.2341C27.0615 10.0967 26.8551 10.0076 26.6365 9.97596L18.6615 8.81846L15.0965 1.59346C14.9933 1.38413 14.8336 1.20785 14.6354 1.08459C14.4373 0.961325 14.2086 0.895996 13.9752 0.895996C13.7418 0.895996 13.5131 0.961325 13.315 1.08459C13.1168 1.20785 12.9571 1.38413 12.854 1.59346L9.28771 8.81846Z" fill="#FFA869" />
-                                        </svg>
-                                    </div>
-                                </div>';
+                            <div data-fill="On" data-plus="Off" data-property-1="Star" class="overflow-hidden">
+                                <div data-svg-wrapper>
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.28771 8.81846L1.31271 9.97471L1.17146 10.0035C0.957634 10.0602 0.762704 10.1727 0.606576 10.3295C0.450447 10.4862 0.338715 10.6816 0.282788 10.8956C0.226861 11.1097 0.228744 11.3347 0.288245 11.5478C0.347745 11.7609 0.462731 11.9544 0.62146 12.1085L6.39896 17.7322L5.03646 25.676L5.02021 25.8135C5.00712 26.0346 5.05304 26.2553 5.15327 26.4528C5.2535 26.6504 5.40444 26.8178 5.59063 26.9378C5.77682 27.0579 5.99157 27.1263 6.2129 27.1361C6.43422 27.1459 6.65417 27.0966 6.85021 26.9935L13.9827 23.2435L21.099 26.9935L21.224 27.051C21.4303 27.1322 21.6545 27.1571 21.8737 27.1232C22.0928 27.0892 22.2989 26.9975 22.471 26.8575C22.643 26.7176 22.7747 26.5344 22.8525 26.3268C22.9304 26.1191 22.9516 25.8945 22.914 25.676L21.5502 17.7322L27.3302 12.1072L27.4277 12.001C27.567 11.8294 27.6583 11.624 27.6924 11.4057C27.7264 11.1874 27.702 10.9639 27.6216 10.7581C27.5412 10.5523 27.4076 10.3715 27.2346 10.2341C27.0615 10.0967 26.8551 10.0076 26.6365 9.97596L18.6615 8.81846L15.0965 1.59346C14.9933 1.38413 14.8336 1.20785 14.6354 1.08459C14.4373 0.961325 14.2086 0.895996 13.9752 0.895996C13.7418 0.895996 13.5131 0.961325 13.315 1.08459C13.1168 1.20785 12.9571 1.38413 12.854 1.59346L9.28771 8.81846Z" fill="#FFA869" />
+                                    </svg>
+                                </div>
+                            </div>';
                             } else {
-                                // Пустая звезда
                                 $stars_html .= '
-                                <div data-fill="Off" data-plus="Off" data-property-1="Star" class="overflow-hidden">
-                                    <div data-svg-wrapper>
-                                        <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13.9844 20.831L6.26941 24.8872L7.74316 16.296L1.49316 10.2122L10.1182 8.96225L13.9757 1.146L17.8332 8.96225L26.4582 10.2122L20.2082 16.296L21.6819 24.8872L13.9844 20.831Z" stroke="#FFA869" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                </div>';
+                            <div data-fill="Off" data-plus="Off" data-property-1="Star" class="overflow-hidden">
+                                <div data-svg-wrapper>
+                                    <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9844 20.831L6.26941 24.8872L7.74316 16.296L1.49316 10.2122L10.1182 8.96225L13.9757 1.146L17.8332 8.96225L26.4582 10.2122L20.2082 16.296L21.6819 24.8872L13.9844 20.831Z" stroke="#FFA869" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>';
                             }
                         }
                 ?>
                         <!-- Карточка с отзывом -->
-                        <div class="min-w-full flex justify-center">
-                            <div class="w-[530px] h-[274px] bg-white rounded-[20px] flex flex-col p-5">
-                                <div class="w-full flex justify-between">
+                        <div id="slide-<?php echo $index; ?>" class="carousel-item flex-shrink-0 mx-2" data-index="<?php echo $index; ?>">
+                            <div class="review-card w-[530px] h-[274px] bg-white rounded-[20px] flex flex-col p-5">
+                                <div class="name-stars-flex w-full flex justify-between">
                                     <div class="text-black text-2xl font-bold font-['Nunito']"><?php echo esc_html($review->author_name); ?></div>
                                     <!-- Stars -->
                                     <div class="flex">
@@ -119,7 +117,7 @@ get_header();
                     }
                 } else {
                     ?>
-                    <div class="min-w-full flex justify-center">
+                    <div id="slide-0" class="carousel-item flex-shrink-0 mx-2" data-index="0">
                         <div class="w-[530px] h-[274px] bg-white rounded-[20px] flex flex-col p-5">
                             <div class="text-gray-600">Отзывов пока нет.</div>
                         </div>
@@ -131,14 +129,16 @@ get_header();
         </div>
 
         <!-- Кнопки навигации -->
-        <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2">
+        <div class="carousel-buttons absolute left-0 top-0 w-[370px] h-[276.65px] bg-gradient-to-r from-[#f6eeff] to-[#f6eeff]/0"></div>
+        <button id="prev" class="carousel-buttons absolute left-[100px] top-1/2 transform -translate-y-1/2">
             <div data-svg-wrapper>
                 <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M26.0003 0.643563C32.5639 0.63837 38.8664 3.2147 43.5469 7.81632C48.2273 12.4179 50.9104 18.6757 51.0167 25.2385C51.1231 31.8013 48.6442 38.1427 44.1152 42.8936C39.5863 47.6444 33.3707 50.4236 26.8103 50.6311L26.0003 50.6436L25.1902 50.6311C18.6298 50.4236 12.4142 47.6444 7.88525 42.8936C3.35631 38.1427 0.87741 31.8013 0.983754 25.2385C1.0901 18.6757 3.77315 12.4179 8.45364 7.81632C13.1341 3.2147 19.4366 0.63837 26.0003 0.643563ZM27.7677 13.8761C27.2989 13.4074 26.6632 13.1441 26.0003 13.1441C25.3373 13.1441 24.7016 13.4074 24.2328 13.8761L14.2327 23.8761C14.1587 23.95 14.0894 24.0285 14.0252 24.1111L13.8652 24.3411L13.7352 24.5861L13.6252 24.8611L13.5502 25.1411L13.5077 25.4561L13.5002 25.6436L13.5102 25.8686L13.5277 26.0136L13.5902 26.3086L13.6777 26.5711L13.8127 26.8536L13.9202 27.0286L14.0977 27.2661L14.2327 27.4111L24.2328 37.4111L24.4678 37.6186C24.9702 38.0071 25.6018 38.1898 26.2341 38.1296C26.8664 38.0693 27.452 37.7707 27.8721 37.2943C28.2922 36.8178 28.5152 36.1994 28.4958 35.5645C28.4764 34.9296 28.2161 34.326 27.7677 33.8761L22.0378 28.1436H36.0003L36.2928 28.1261C36.9255 28.0508 37.5056 27.7368 37.9146 27.2481C38.3236 26.7595 38.5305 26.1332 38.4932 25.497C38.4558 24.8609 38.177 24.2631 37.7137 23.8257C37.2503 23.3883 36.6374 23.1443 36.0003 23.1436H22.0352L27.7677 17.4111L27.9753 17.1761C28.3484 16.6951 28.5332 16.0944 28.495 15.4869C28.4568 14.8793 28.1982 14.3065 27.7677 13.8761Z" fill="#8A48E6" />
                 </svg>
             </div>
         </button>
-        <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2">
+        <div class="carousel-buttons absolute right-0 top-0 w-[370px] h-[276.65px] bg-gradient-to-r from-[#f6eeff]/0 to-[#f6eeff]"></div>
+        <button id="next" class="carousel-buttons absolute right-[100px] top-1/2 transform -translate-y-1/2">
             <div data-svg-wrapper>
                 <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M25.9997 0.643563C19.4361 0.63837 13.1336 3.2147 8.45315 7.81632C3.77265 12.4179 1.0896 18.6757 0.983258 25.2385C0.876914 31.8013 3.35581 38.1427 7.88475 42.8936C12.4137 47.6444 18.6293 50.4236 25.1897 50.6311L25.9997 50.6436L26.8098 50.6311C33.3702 50.4236 39.5858 47.6444 44.1147 42.8936C48.6437 38.1427 51.1226 31.8013 51.0162 25.2385C50.9099 18.6757 48.2268 12.4179 43.5464 7.81632C38.8659 3.2147 32.5634 0.63837 25.9997 0.643563ZM24.2323 13.8761C24.7011 13.4074 25.3368 13.1441 25.9997 13.1441C26.6627 13.1441 27.2984 13.4074 27.7672 13.8761L37.7673 23.8761C37.8413 23.95 37.9106 24.0285 37.9748 24.1111L38.1348 24.3411L38.2648 24.5861L38.3748 24.8611L38.4498 25.1411L38.4923 25.4561L38.4998 25.6436L38.4898 25.8686L38.4723 26.0136L38.4098 26.3086L38.3223 26.5711L38.1873 26.8536L38.0798 27.0286L37.9023 27.2661L37.7673 27.4111L27.7672 37.4111L27.5322 37.6186C27.0298 38.0071 26.3982 38.1898 25.7659 38.1296C25.1336 38.0693 24.548 37.7707 24.1279 37.2943C23.7078 36.8178 23.4848 36.1994 23.5042 35.5645C23.5236 34.9296 23.7839 34.326 24.2323 33.8761L29.9622 28.1436H15.9997L15.7072 28.1261C15.0745 28.0508 14.4944 27.7368 14.0854 27.2481C13.6764 26.7595 13.4695 26.1332 13.5068 25.497C13.5442 24.8609 13.823 24.2631 14.2863 23.8257C14.7497 23.3883 15.3626 23.1443 15.9997 23.1436H29.9648L24.2323 17.4111L24.0247 17.1761C23.6516 16.6951 23.4668 16.0944 23.505 15.4869C23.5432 14.8793 23.8018 14.3065 24.2323 13.8761Z" fill="#8A48E6" />
