@@ -14,7 +14,7 @@ get_header();
         <img id="oct-main" src="<?php echo get_template_directory_uri(); ?>/assets/images/oct-price-main.png" alt="">
     </div>
     <div id="block-2" class="h-hull w-full -translate-y-[150px] pt-[100px] pb-[120px] px-[150px]">
-        <div class="text-center justify-start text-white text-5xl font-bold font-['Nunito']">Обери ідеальний для себе план</div>
+        <div class="text-center mt-3 justify-start text-white text-5xl font-bold font-['Nunito']">Обери ідеальний для себе план</div>
         <!-- Цены -->
         <div id="price-blocks" class="flex gap-5 mt-10 justify-center">
             <!-- Start -->
@@ -42,8 +42,8 @@ get_header();
                 </div>
             </div>
             <!-- Flex -->
-            <div class="min-w-[310px] min-h-[463px] relative overflow-hidden bg-white rounded-[20px]">
-                <div class="flex flex-col h-full justify-between p-5">
+            <div class="min-w-[310px] min-h-[463px] h-full relative overflow-hidden bg-white rounded-[20px]">
+                <div class="flex flex-col gap-5 min-h-[463px] justify-between p-5">
                     <div class="text-black text-2xl font-bold font-['Nunito']">Гнучкий окто</div>
                     <ul class="max-w-[140px] list-inside text-black text-xs font-normal font-['Mulish']">
                         <li>До 5 курсів</li>
@@ -62,7 +62,7 @@ get_header();
             </div>
             <!-- Master -->
             <div class="min-w-[310px] min-h-[463px] relative overflow-hidden bg-white rounded-[20px]">
-                <div class="flex flex-col h-full justify-between p-5">
+                <div class="flex flex-col h-full min-h-[463px] justify-between p-5">
                     <div class="text-black text-2xl font-bold font-['Nunito']">Майстер восьминіг</div>
                     <ul class="max-w-[140px] list-inside text-black text-xs font-normal font-['Mulish']">
                         <li>До 10 курсів</li>
@@ -81,7 +81,7 @@ get_header();
             </div>
             <!-- Capitan -->
             <div class="min-w-[310px] min-h-[463px] relative overflow-hidden bg-white rounded-[20px]">
-                <div class="flex flex-col h-full justify-between p-5">
+                <div class="flex flex-col h-full min-h-[463px] justify-between p-5">
                     <div class="text-black text-2xl font-bold font-['Nunito']">Капітан ОктоПРО</div>
                     <ul class="max-w-[140px] list-inside text-black text-xs font-normal font-['Mulish']">
                         <li>Необмежена кількість курсів</li>
@@ -117,8 +117,8 @@ get_header();
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="min-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Знижки</div>
-                                <div class="min-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">
+                                <div class="w-full text-[#120c38] text-2xl font-bold font-['Nunito']">Знижки</div>
+                                <div class="w-full text-[#827ead] text-[15px] font-normal font-['Mulish']">
                                     Отримуйте знижки на покупку тарифних планів.
                                 </div>
                             </div>
@@ -138,8 +138,8 @@ get_header();
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="min-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Генерація тестів</div>
-                                <div class="min-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">
+                                <div class="w-full text-[#120c38] text-2xl font-bold font-['Nunito']">Генерація тестів</div>
+                                <div class="w-full text-[#827ead] text-[15px] font-normal font-['Mulish']">
                                     Докуповуйте генерації тестів та перевірку домашніх завдань за допомогою ChatGPT.
                                 </div>
                             </div>
@@ -160,8 +160,8 @@ get_header();
                                         </div>
                                     </div>
                                 </div>
-                                <div class="min-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Хмарне середовище</div>
-                                <div class="min-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">
+                                <div class="w-full text-[#120c38] text-2xl font-bold font-['Nunito']">Хмарне середовище</div>
+                                <div class="w-full text-[#827ead] text-[15px] font-normal font-['Mulish']">
                                     Розширюйте своє хмарне сховище, щоб зберігати більше навчальних матеріалів.
                                 </div>
                             </div>
@@ -181,8 +181,8 @@ get_header();
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="min-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Octo-магазин</div>
-                                <div class="min-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">
+                                <div class="w-full text-[#120c38] text-2xl font-bold font-['Nunito']">Octo-магазин</div>
+                                <div class="w-full text-[#827ead] text-[15px] font-normal font-['Mulish']">
                                     Купуйте товари в Octo-магазині.
                                 </div>
                             </div>
