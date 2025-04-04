@@ -46,4 +46,7 @@
         padding: 40px;
         gap: 40px;
     }
+    .header{
+        height: fit-content !important;
+    }
 }
