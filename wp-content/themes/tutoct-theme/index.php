@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <div id="block-1" class="w-full h-[678px]">
+    <div id="block-1" class="w-full">
         <div id="background-image"></div>
 
         <div id="efectiv" class="h-full w-full flex gap-[20px] px-[150px]">
@@ -16,10 +16,10 @@
                     <span class="text-[#120c38] text-xl font-bold font-['Mulish']">TUTOCT</span>
                     <span class="text-[#120c38] text-xl font-medium font-['Mulish']"> !</span>
                 </div>
-                <div id="buttons-main" class="flex justify-start gap-5 mt-[120px]">
-                    <button class="h-14 px-10 py-3 bg-[#8a4ae6] rounded-2xl overflow-hidden text-center text-white text-2xl font-medium font-['Nunito']">Перейти в систему
+                <div id="buttons-main" class="flex justify-start gap-5 mt-[120px] mb-[50px]">
+                    <button class="min-h-14 px-10 py-3 bg-[#8a4ae6] rounded-2xl overflow-hidden text-center text-white text-2xl font-medium font-['Nunito']">Перейти в систему
                     </button>
-                    <button class="button-secondary h-14 px-10 py-3 bg-white rounded-2xl border border-[#8a48e6] text-[#8a48e6] text-2xl font-normal font-['Nunito']">Перейти в Instagram
+                    <button class="button-secondary min-h-14 px-10 py-3 bg-white rounded-2xl border border-[#8a48e6] text-[#8a48e6] text-2xl font-normal font-['Nunito']">Перейти в Instagram
                     </button>
                 </div>
             </div>
@@ -94,17 +94,13 @@
 
         <div id="block-2" class="h-full w-full flex justify-between gap-[20px] px-[150px] pt-[150px]">
             <!-- Images -->
-            <div class="w-[512px] h-[512px] relative">
-                <img class="w-[156px] max-h-[512px] left-[0px] top-[0px] absolute rounded-bl-[200px] rounded-tr-[20px] rounded-tl-[20px] rounded-br-[20px]" src="https://placehold.co/156x512" />
-                <img class="w-[156px] h-[246px] left-[176px] top-[0px] absolute rounded-tr-[20px] rounded-bl-[20px] rounded-tl-[200px] rounded-br-[20px]" src="https://placehold.co/156x246" />
-                <img class="w-[156px] h-[246px] left-[176px] top-[266px] absolute rounded-tl-[20px] rounded-br-[200px] rounded-bl-[20px] rounded-tr-[20px]" src="https://placehold.co/156x246" />
-                <img class="w-[156px] h-[512px] left-[352px] top-[0px] absolute rounded-tr-[200px] rounded-tl-[20px] rounded-bl-[20px] rounded-br-[20px]" src="https://placehold.co/156x512" />
-            </div>
+            <img id="image-who" class="w-[512px] h-[512px] z-0" src="<?php echo get_template_directory_uri(); ?>/assets/images/main-who.png" alt="">
+            <img id="image-who-adaptive" class="w-[408px] h-[240px] z-0 hidden" src="<?php echo get_template_directory_uri(); ?>/assets/images/main-who-adaptive.png" alt="">
             <!-- Text + Oct -->
-            <div class="z-10 h-full flex flex-col justify-between items-end">
+            <div id="text-oct" class="z-10 h-full flex flex-col justify-between items-end">
                 <div>
                     <div class="text-center justify-start text-white text-[32px] font-bold font-['Nunito'] capitalize">Хто ми?</div>
-                    <div class="w-[684px] justify-start"><span class="text-white text-xl font-bold font-['Mulish']">TUTOCT</span><span class="text-white text-xl font-normal font-['Mulish']"> — це сучасна CRM-система, створена спеціально для репетиторів і навчальних центрів. Як восьминіг, що одночасно виконує кілька завдань, наша платформа допомагає автоматизувати рутину та ефективно керувати навчальним процесом.</span></div>
+                    <div class="justify-start"><span class="text-white text-xl font-bold font-['Mulish']">TUTOCT</span><span class="text-white text-xl font-normal font-['Mulish']"> — це сучасна CRM-система, створена спеціально для репетиторів і навчальних центрів. Як восьминіг, що одночасно виконує кілька завдань, наша платформа допомагає автоматизувати рутину та ефективно керувати навчальним процесом.</span></div>
                 </div>
                 <img class="w-[424px] h-[421px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/octopus-main.png" alt="octopus">
             </div>
@@ -115,7 +111,7 @@
         <div class="text-center mx-auto py-[40px] text-[#8a48e6] text-xl font-medium font-['Mulish']">TUTOCT пропонує репетиторам все необхідне для зручного та ефективного управління своєю діяльністю.</div>
         <div id="possibilities" class="flex flex-wrap justify-center gap-5 max-w-[1300px] mx-auto">
             <!-- card 1 -->
-            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+            <div data-property-1="innative" class="p-card w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 flex-shrink-0">
                         <div data-svg-wrapper class="relative">
@@ -131,7 +127,7 @@
                 </div>
             </div>
             <!-- card 2 -->
-            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+            <div data-property-1="innative" class="p-card w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 flex-shrink-0">
                         <div data-svg-wrapper class="relative">
@@ -147,7 +143,7 @@
                 </div>
             </div>
             <!-- card 3 -->
-            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+            <div data-property-1="innative" class="p-card w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 flex-shrink-0">
                         <div data-svg-wrapper class="relative">
@@ -163,7 +159,7 @@
                 </div>
             </div>
             <!-- card 4 -->
-            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+            <div data-property-1="innative" class="p-card w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 flex-shrink-0">
                         <div data-svg-wrapper class="relative">
@@ -179,7 +175,7 @@
                 </div>
             </div>
             <!-- card 5 -->
-            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+            <div data-property-1="innative" class="p-card w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 relative overflow-hidden">
                         <div data-svg-wrapper class="top-[9.33px] absolute">
@@ -200,7 +196,7 @@
                 </div>
             </div>
             <!-- card 6 -->
-            <div data-property-1="innative" class="w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
+            <div data-property-1="innative" class="p-card w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 flex-shrink-0">
                         <div data-svg-wrapper class="relative">
@@ -225,15 +221,15 @@
             <div class="flex flex-col gap-10">
                 <div class="text-[#120c38] max-w-[685px] text-center text-[15px] font-normal font-['Mulish']">Наше завдання – автоматизувати рутину, спростити організаційні процеси та дати викладачам більше часу для якісного навчання студентів. Замість витрачання годин на адміністрування, ви зможете зосередитися на головному – передачі знань та розвитку своїх учнів!</div>
                 <div id="meta-blocks-3" class=" flex gap-[18px]">
-                    <div class="w-[216px] h-[131px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
+                    <div class="max-w-[216px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
                         <div class="text-center text-[#120c38] text-[32px] font-bold font-['Nunito']">1000+</div>
                         <div class="text-center text-[#827ead] text-[15px] font-normal font-['Mulish'] capitalize">відповідальних репетиторів</div>
                     </div>
-                    <div class="w-[216px] h-[131px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
+                    <div class="max-w-[216px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
                         <div class="text-center text-[#120c38] text-[32px] font-bold font-['Nunito']">4.5</div>
                         <div class="text-center text-[#827ead] text-[15px] font-normal font-['Mulish'] capitalize">Оцінка клієнтів</div>
                     </div>
-                    <div class="w-[216px] h-[131px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
+                    <div class="max-w-[216px] rounded-[20px] bg-white flex flex-col items-center justify-center p-4">
                         <div class="text-center text-[#120c38] text-[32px] font-bold font-['Nunito']">30%</div>
                         <div class="text-center text-[#827ead] text-[15px] font-normal font-['Mulish'] capitalize">зекономленого часу</div>
                     </div>

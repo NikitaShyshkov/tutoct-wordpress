@@ -63,8 +63,49 @@
     }
     #meta-blocks-3{
         justify-content: center;
+        flex-direction: column;
     }
     #meta-blocks-3 div{
-        width: auto !important;
+        max-width: none !important;
+        width: 100% !important;
+    }
+    #text-oct img{
+        height: auto !important;
+    }
+    #text-oct{
+        background-color: #120C38;
+    }
+    .p-card{
+        height: auto !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+    #possibilities{
+        padding: 16px !important;
+    }
+}
+@media (max-width: 1400px) {
+    #image-who{
+        display: none;
+    }
+    #image-who-adaptive{
+        display: block;
+        padding: 16px !important;
+    }
+    #efectiv,
+    #meta{
+        padding: 16px !important;
+    }
+    #block-2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 !important;
+    }
+    #text-oct{
+        justify-content: center;
+        align-items: center;
+        padding: 16px !important;
+        padding-bottom: 0 !important;
     }
 }
