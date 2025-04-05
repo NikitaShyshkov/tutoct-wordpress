@@ -89,23 +89,23 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="p-5 bg-white rounded-2xl flex flex-col justify-start items-start gap-5">
+        <form id="user-question-form" class="p-5 bg-white rounded-2xl flex flex-col justify-start items-start gap-5">
             <div class="w-[164px] justify-start text-[#120c38] text-2xl font-bold font-['Mulish']">Напиши нам!</div>
             <div class="max-w-[555px] justify-start text-[#120c38] text-[15px] font-normal font-['Mulish']">Ми тут, щоб допомогти вам! Якщо у вас є запитання або пропозиції, не соромтеся звертатися – ми завжди на зв’язку та готові надати підтримку</div>
-            <div class="w-full flex gap-5">
+            <div id="inputs-div" class="w-full flex gap-5">
                 <!-- Поле Имя -->
-                <input type="text" placeholder="Ім'я" class="w-full h-12 px-4 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal focus:outline-none focus:ring-2 focus:ring-purple-300 placeholder-gray-500">
+                <input type="text" name="first_name" placeholder="Ім'я" class="w-full h-12 px-4 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal focus:outline-none focus:ring-1 focus:ring-black placeholder-gray-500" required>
 
                 <!-- Поле Призвище -->
-                <input type="text" placeholder="Прізвище" class="w-full h-12 px-4 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal focus:outline-none focus:ring-2 focus:ring-purple-300 placeholder-gray-500">
+                <input type="text" name="last_name" placeholder="Прізвище" class="w-full h-12 px-4 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal focus:outline-none focus:ring-1 focus:ring-black placeholder-gray-500" required>
 
                 <!-- Поле Ваш Email -->
-                <input type="email" placeholder="Ваш Email" class="w-full h-12 px-4 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal focus:outline-none focus:ring-2 focus:ring-purple-300 placeholder-gray-500">
+                <input type="email" name="email" placeholder="Ваш Email" class="w-full h-12 px-4 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal focus:outline-none focus:ring-1 focus:ring-black placeholder-gray-500" required>
             </div>
 
             <!-- Поле Повідомлення -->
             <div class="w-full h-32 relative">
-                <textarea placeholder="Повідомлення" class="w-full h-full px-4 pt-4 pb-12 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal resize-none focus:outline-none focus:ring-2 focus:ring-black placeholder-[#827FAE]"></textarea>
+                <textarea name="message" placeholder="Повідомлення" class="w-full h-full px-4 pt-4 pb-12 bg-white border border-gray-200 rounded-lg text-gray-600 text-base font-normal resize-none focus:outline-none focus:ring-1 focus:ring-black placeholder-[#827FAE]" required></textarea>
                 <div class="absolute bottom-7 right-8">
                     <div data-svg-wrapper class="absolute">
                         <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +120,7 @@ get_header();
                 </div>
             </div>
             <div class="w-[309px] justify-start text-[#827ead] text-xs font-normal font-['Mulish']">*відповідь повинна прийти впродовж 48 годин</div>
-            <div class="w-[210px] self-end h-10 p-2.5 bg-[#8a48e6] rounded-[40px] inline-flex justify-between items-center">
+            <button type="submit" id="send-question" class="w-[210px] self-end h-10 p-2.5 bg-[#8a48e6] rounded-[40px] inline-flex justify-between items-center">
                 <div class="justify-center text-white text-[15px] font-bold font-['Nunito']">Надіслати запитання</div>
                 <div data-fill="Off" data-plus="Off" data-property-1="Send" class="w-6 h-6 relative overflow-hidden">
                     <div data-svg-wrapper class="left-[4px] top-[4px] absolute">
@@ -129,12 +129,12 @@ get_header();
                         </svg>
                     </div>
                 </div>
-            </div>
-        </div>
+            </button>
+        </form>
     </div>
     <div id="block-oct" class="w-full flex justify-center items-center translate-y-4">
         <img class="translate-x-[100px] translate-y-4" src="<?php echo get_template_directory_uri(); ?>/assets/images/oct-contact.png" alt="">
-        <div class="max-w-[606px] w-full h-[90px] rounded-2xl bg-white py-5 pl-[120px]"><span class="text-[#120c38] text-xl font-normal font-['Mulish']">Перевірте вкладку </span><span class="text-[#8a48e6] text-xl font-normal font-['Mulish'] underline">Питання відповідь</span><span class="text-[#120c38] text-xl font-normal font-['Mulish']">, можливо ми вже відповіли на ваше питання!</span>
+        <div class="max-w-[606px] w-full h-[90px] rounded-2xl bg-white py-5 pl-[120px]"><span class="text-[#120c38] text-xl font-normal font-['Mulish']">Перевірте вкладку </span><a href="/faq" class="text-[#8a48e6] text-xl font-normal font-['Mulish'] underline">Питання відповідь</a><span class="text-[#120c38] text-xl font-normal font-['Mulish']">, можливо ми вже відповіли на ваше питання!</span>
         </div>
     </div>
 </main>

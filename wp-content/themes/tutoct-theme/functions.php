@@ -1,5 +1,6 @@
 <?php
-function tutoct_theme_enqueue_styles() {
+function tutoct_theme_enqueue_styles()
+{
     // Подключаем основной файл стилей темы
     wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0', 'all');
 
@@ -9,7 +10,7 @@ function tutoct_theme_enqueue_styles() {
     // Подключаем стили для Footer
     wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/footer.css', array(), '1.0', 'all');
 
-    if (is_front_page()) {  
+    if (is_front_page()) {
         wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/css/home.css', array(), '1.0', 'all');
     }
 
@@ -20,6 +21,12 @@ function tutoct_theme_enqueue_styles() {
 
     if (is_page('contacts')) {
         wp_enqueue_style('contacts-style', get_template_directory_uri() . '/assets/css/contacts.css');
+        wp_enqueue_script('contacts-script', get_template_directory_uri() . '/assets/js/contacts.js', array('jquery'), null, true);
+        // Передаём данные в JavaScript
+        wp_localize_script('contacts-script', 'ajax_object', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('submit_question_nonce')
+        ));
     }
 
     if (is_page('price')) {
@@ -33,7 +40,6 @@ function tutoct_theme_enqueue_styles() {
         wp_localize_script('reviews-script', 'ajax_object', array(
             'ajax_url' => admin_url('admin-ajax.php')
         ));
-        
     }
 
     if (is_single()) {
@@ -46,7 +52,8 @@ function tutoct_theme_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'tutoct_theme_enqueue_styles');
 
-function tutoct_register_faq_post_type() {
+function tutoct_register_faq_post_type()
+{
     register_post_type('faq', array(
         'labels' => array(
             'name'          => 'FAQ',
@@ -68,7 +75,8 @@ function tutoct_register_faq_post_type() {
 add_action('init', 'tutoct_register_faq_post_type');
 
 // Функция для создания таблицы отзывов при активации темы
-function create_reviews_table() {
+function create_reviews_table()
+{
     global $wpdb;
     $table_name = $wpdb->prefix . 'reviews'; // Имя таблицы с префиксом (например, wp_reviews)
     $charset_collate = $wpdb->get_charset_collate();
@@ -90,7 +98,8 @@ function create_reviews_table() {
 // Регистрируем хук для создания таблицы при активации темы
 add_action('after_switch_theme', 'create_reviews_table');
 // Регистрируем меню для управления отзывами
-function register_reviews_menu() {
+function register_reviews_menu()
+{
     add_menu_page(
         'Управление отзывами', // Заголовок страницы
         'Отзывы', // Название пункта меню
@@ -104,7 +113,8 @@ function register_reviews_menu() {
 add_action('admin_menu', 'register_reviews_menu');
 
 // Функция для отображения страницы управления отзывами
-function render_reviews_page() {
+function render_reviews_page()
+{
     global $wpdb;
     $table_name = $wpdb->prefix . 'reviews';
 
@@ -135,7 +145,7 @@ function render_reviews_page() {
     // Получаем все отзывы
     $reviews = $wpdb->get_results("SELECT * FROM $table_name ORDER BY created_at DESC");
 
-    ?>
+?>
     <div class="wrap">
         <h1>Управление отзывами</h1>
 
@@ -198,13 +208,14 @@ function render_reviews_page() {
             </tbody>
         </table>
     </div>
-    <?php
+<?php
 }
 add_theme_support('post-thumbnails');
 add_action('wp_ajax_submit_review_ajax', 'handle_submit_review_ajax');
 add_action('wp_ajax_nopriv_submit_review_ajax', 'handle_submit_review_ajax');
 
-function handle_submit_review_ajax() {
+function handle_submit_review_ajax()
+{
     global $wpdb;
     $table_name = $wpdb->prefix . 'reviews';
 
@@ -236,4 +247,145 @@ function handle_submit_review_ajax() {
         wp_send_json_error(array('message' => 'Ошибка при добавлении отзыва: ' . $wpdb->last_error));
     }
 }
+
+// Функция для создания таблицы
+function create_user_questions_table()
+{
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'user_questions'; // Имя таблицы с префиксом (например, wp_user_questions)
+    $charset_collate = $wpdb->get_charset_collate();
+
+    // Проверяем, существует ли таблица
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        // SQL-запрос для создания таблицы
+        $sql = "CREATE TABLE $table_name (
+            id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+            first_name VARCHAR(100) NOT NULL,
+            last_name VARCHAR(100) NOT NULL,
+            email VARCHAR(100) NOT NULL,
+            message TEXT NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (id)
+        ) $charset_collate;";
+
+        // Подключаем dbDelta для создания таблицы
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+
+        // Добавляем сообщение в админку об успешном создании таблицы (для отладки)
+        if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") == $table_name) {
+            add_action('admin_notices', function () {
+                echo '<div class="notice notice-success is-dismissible"><p>Таблица wp_user_questions успешно создана.</p></div>';
+            });
+        } else {
+            add_action('admin_notices', function () {
+                echo '<div class="notice notice-error is-dismissible"><p>Ошибка: не удалось создать таблицу wp_user_questions.</p></div>';
+            });
+        }
+    }
+}
+
+// Проверяем и создаём таблицу при каждой загрузке WordPress
+add_action('init', 'create_user_questions_table');
+
+// Возможность вручную запустить создание таблицы через параметр в URL (для отладки)
+function manually_create_user_questions_table()
+{
+    if (isset($_GET['create_user_questions_table']) && current_user_can('manage_options')) {
+        create_user_questions_table();
+        wp_redirect(remove_query_arg('create_user_questions_table'));
+        exit;
+    }
+}
+add_action('admin_init', 'manually_create_user_questions_table');
+
+// Добавляем страницу в админку
+function user_questions_admin_menu()
+{
+    add_menu_page(
+        'Вопросы пользователей', // Заголовок страницы
+        'Вопросы пользователей', // Название в меню
+        'manage_options', // Право доступа (только для администраторов)
+        'user-questions', // Слаг страницы
+        'user_questions_admin_page', // Функция для отображения страницы
+        'dashicons-email-alt', // Иконка в меню
+        20 // Позиция в меню
+    );
+}
+add_action('admin_menu', 'user_questions_admin_menu');
+
+// Функция для отображения страницы
+function user_questions_admin_page()
+{
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'user_questions';
+
+    // Получаем все вопросы из базы данных
+    $questions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY created_at DESC");
+
+?>
+    <div class="wrap">
+        <h1>Вопросы пользователей</h1>
+        <?php if ($questions) : ?>
+            <table class="wp-list-table widefat fixed striped">
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Email</th>
+                        <th>Сообщение</th>
+                        <th>Дата отправки</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($questions as $question) : ?>
+                        <tr>
+                            <td><?php echo esc_html($question->first_name); ?></td>
+                            <td><?php echo esc_html($question->last_name); ?></td>
+                            <td><?php echo esc_html($question->email); ?></td>
+                            <td><?php echo esc_html($question->message); ?></td>
+                            <td><?php echo esc_html($question->created_at); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else : ?>
+            <p>Пока нет вопросов.</p>
+        <?php endif; ?>
+    </div>
+<?php
+}
+
+function submit_user_question()
+{
+    check_ajax_referer('submit_question_nonce', 'nonce');
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'user_questions';
+
+    $first_name = sanitize_text_field($_POST['first_name']);
+    $last_name = sanitize_text_field($_POST['last_name']);
+    $email = sanitize_email($_POST['email']);
+    $message = sanitize_textarea_field($_POST['message']);
+
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $email,
+            'message' => $message,
+            'created_at' => current_time('mysql')
+        ),
+        array('%s', '%s', '%s', '%s', '%s')
+    );
+
+    if ($result !== false) {
+        wp_send_json_success();
+    } else {
+        wp_send_json_error(array('message' => 'Не вдалося зберегти запитання.'));
+    }
+}
+add_action('wp_ajax_submit_user_question', 'submit_user_question');
+add_action('wp_ajax_nopriv_submit_user_question', 'submit_user_question');
 ?>

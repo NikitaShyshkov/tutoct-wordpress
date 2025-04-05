@@ -53,18 +53,6 @@
             </a>
         </nav>
 
-        <!-- Icons -->
-        <div id="change-icons" class="flex items-center gap-4">
-            <div>
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="40" rx="20" fill="white" />
-                    <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#D7D7D7" stroke-opacity="0.85" />
-                    <path d="M12 13H19M17 11V13C17 17.418 14.761 21 12 21" stroke="#120C38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M13 17C13 19.144 15.952 20.908 19.7 21M20 28L24 19L28 28M27.1 26H20.9" stroke="#120c38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </div>
-        </div>
-
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 flex-col items-center justify-center gap-6 text-2xl font-['Nunito']">
             <a href="/" class="<?php echo is_home() ? 'text-[#8a48e6] font-semibold' : 'text-[#120c38] font-normal'; ?>">Про нас</a>
