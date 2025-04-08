@@ -1,0 +1,52 @@
+#background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/patterns/pattern4.png');
+    background-size: 213.25px;
+    background-repeat: repeat;
+    opacity: 10%;
+    z-index: -1 !important;
+}
+body{
+    height: 100vh;
+    background-color: #F6EEFF;
+}
+@media (max-width: 991px) {
+    body{
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between !important;
+    }
+    #img-1{
+        display: none;
+    }
+    #img-1-1{
+        display: block;
+    }
+    #img-2{
+        max-height: 360px !important;
+    }
+    #img-3{
+        max-height: 255px !important;
+    }
+    #block-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #block-3{
+        justify-content: space-between !important;
+        align-items: end;
+    }
+}
+@media (max-width: 500px) {
+    #img-1-1{
+        display: none;
+    }
+    #img-3{
+        display: none;
+    }
+}
