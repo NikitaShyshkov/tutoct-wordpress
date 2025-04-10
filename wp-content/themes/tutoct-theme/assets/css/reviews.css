@@ -7,6 +7,9 @@
     overflow: hidden; /* Скрываем лишние карточки */
     position: relative;
     user-select: none; /* Отключаем выделение текста при перетаскивании */
+    -webkit-user-select: none; /* Для Safari */
+    -ms-user-select: none; /* Для Edge */
+    touch-action: pan-y; /* Разрешаем только вертикальный скролл на сенсорных устройствах */
 }
 
 #carousel {
@@ -20,14 +23,10 @@
     margin: 0 8px; /* Отступы между карточками */
 }
 
-/* Стили для перетаскивания */
-.carousel-wrapper.grabbing {
-    cursor: grabbing;
+.carousel-wrapper, .carousel-item {
+    -webkit-tap-highlight-color: transparent;
 }
 
-.carousel-wrapper {
-    cursor: grab;
-}
 @media (max-width: 1400px) {
     #octopus-img{
         display: none;

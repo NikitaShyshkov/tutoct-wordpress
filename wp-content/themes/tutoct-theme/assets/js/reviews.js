@@ -14,11 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Инициализация
-    let currentSlide = parseInt(totalSlides / 2 - 1); // Текущий индекс (может быть отрицательным или больше totalSlides)
+    let currentSlide = 0; // Текущий индекс
     let currentTranslate = 0; // Текущее смещение transform
     let isDragging = false;
     let startX = 0;
     let startTranslate = 0;
+    let itemWidth = items[0] ? items[0].offsetWidth + 16 : 0; // Ширина карточки + отступы (8px + 8px)
+    let wrapperWidth = carouselWrapper.offsetWidth;
+    let maxTranslate = 0; // Максимальное смещение (первая карточка)
+    let minTranslate = -(itemWidth * (totalSlides - 1)) + (wrapperWidth - itemWidth); // Минимальное смещение (последняя карточка)
 
     // Функция для получения текущего смещения transform
     function getTranslateX() {
@@ -48,9 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSlide = ((index % totalSlides) + totalSlides) % totalSlides;
 
         // Вычисляем смещение для центрирования карточки
-        const translate = -(currentSlide * itemWidth) + centerOffset;
+        const translate = -(currentSlide * itemWidth) + (wrapperWidth / 2 - itemWidth / 2);
         moveToSlide(translate, withTransition);
     }
+
+    // Обновление границ при изменении размера окна
+    window.addEventListener('resize', () => {
+        itemWidth = items[0] ? items[0].offsetWidth + 16 : 0;
+        wrapperWidth = carouselWrapper.offsetWidth;
+        maxTranslate = 0;
+        minTranslate = -(itemWidth * (totalSlides - 1)) + (wrapperWidth - itemWidth);
+        centerSlide(currentSlide, false);
+    });
 
     // Инициализация: центрируем первую карточку
     if (totalSlides > 0) {
@@ -68,46 +81,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Обработчики для перетаскивания мышкой
-    carouselWrapper.addEventListener('mousedown', (e) => {
+    // Обработчики для сенсорных устройств
+    carouselWrapper.addEventListener('touchstart', (e) => {
+        e.preventDefault(); // Предотвращаем скролл страницы
         isDragging = true;
-        startX = e.pageX;
+        startX = e.touches[0].pageX;
         startTranslate = getTranslateX();
         carousel.style.transition = 'none';
-        carouselWrapper.classList.add('grabbing');
     });
 
-    carouselWrapper.addEventListener('mousemove', (e) => {
+    carouselWrapper.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
-        const currentX = e.pageX;
+        const currentX = e.touches[0].pageX;
         const diff = currentX - startX;
-        currentTranslate = startTranslate + diff;
-        carousel.style.transform = `translateX(${currentTranslate}px)`;
+        const newTranslate = startTranslate + diff;
+        moveToSlide(newTranslate, false);
     });
 
-    carouselWrapper.addEventListener('mouseup', () => {
+    carouselWrapper.addEventListener('touchend', () => {
         if (!isDragging) return;
         isDragging = false;
-        carouselWrapper.classList.remove('grabbing');
 
         // Вычисляем ближайшую карточку после перетаскивания
-        const itemWidth = items[0].offsetWidth + 16;
         const newIndex = Math.round(-currentTranslate / itemWidth);
         centerSlide(newIndex);
     });
 
-    carouselWrapper.addEventListener('mouseleave', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        carouselWrapper.classList.remove('grabbing');
-
-        // Вычисляем ближайшую карточку после перетаскивания
-        const itemWidth = items[0].offsetWidth + 16;
-        const newIndex = Math.round(-currentTranslate / itemWidth);
-        centerSlide(newIndex);
-    });
-
-    // Обработка звёзд рейтинга
+    // Обработка звёзд рейтинга (оставляем без изменений)
     const stars = document.querySelectorAll('.star');
     const ratingInput = document.getElementById('rating');
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // AJAX-отправка формы
+    // AJAX-отправка формы (оставляем без изменений)
     const form = document.getElementById('review-form');
     if (form) {
         form.addEventListener('submit', async (e) => {
@@ -147,20 +147,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: formData
                 });
 
-                // Логируем статус ответа
                 console.log('Статус ответа:', response.status);
                 console.log('Ответ сервера:', response);
 
-                // Проверяем, что ответ валидный JSON
                 const result = await response.json();
                 console.log('Распарсенный JSON:', result);
 
                 if (result.success) {
-                    // alert('Отзыв успешно добавлен!');
                     form.reset();
                     window.location.reload();
                 } else {
-                    // Проверяем, есть ли result.data и result.data.message
                     const errorMessage = result.data && result.data.message ? result.data.message : 'Неизвестная ошибка';
                     alert('Ошибка при добавлении отзыва: ' + errorMessage);
                 }
