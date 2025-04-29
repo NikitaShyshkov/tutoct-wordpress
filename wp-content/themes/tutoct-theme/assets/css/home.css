@@ -28,6 +28,24 @@
     background-repeat: repeat;
 }
 
+.p-card:hover{
+    background-color: #8A48E6 !important;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}
+
+.p-card:hover div{
+    color: white;
+}
+
+.p-card:hover path{
+    stroke: white;
+}
+.p-card:hover:first-child path{
+    fill: white;
+}
+
 
 @media (max-width: 991px) {
     #baba {

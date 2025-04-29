@@ -10,17 +10,16 @@
                     <span class="text-[#120c38] text-5xl font-bold font-['Nunito'] my-[5px]">Підвищуйте вашу </span>
                     <span class="text-[#8a48e6] text-5xl font-bold font-['Nunito'] my-[5px]">ефективність </span>
                     <span class="text-[#120c38] text-5xl font-bold font-['Nunito'] my-[5px]">роботи та навчання</span>
+                    <span class="text-[#8a48e6] text-5xl font-bold font-['Nunito'] my-[5px]">з українською CRM-системою! </span>
                 </div>
                 <div class="justify-start mt-[40px]">
-                    <span class="text-[#120c38] text-xl font-medium font-['Mulish']">Тримайте під контролем усі аспекти вашої роботи: розклад, пошук курсів, учнів і аналітику, забувши про хаос, разом з </span>
-                    <span class="text-[#120c38] text-xl font-bold font-['Mulish']">TUTOCT</span>
-                    <span class="text-[#120c38] text-xl font-medium font-['Mulish']"> !</span>
+                    <span class="text-[#120c38] text-xl font-medium font-['Mulish']">Тримайте під контролем усі аспекти вашої роботи: розклад, пошук курсів, учнів і аналітику — забувши про хаос, разом з <span class="text-[#120c38] text-xl font-bold font-['Mulish']">TUTOCT</span> — сучасною CRM-системою онлайн для освіти. </span>
                 </div>
                 <div id="buttons-main" class="flex justify-start gap-5 mt-[120px] mb-[50px]">
-                    <button class="min-h-14 px-10 py-3 bg-[#8a4ae6] rounded-2xl overflow-hidden text-center text-white text-2xl font-medium font-['Nunito']">Перейти в систему
-                    </button>
-                    <button class="button-secondary min-h-14 px-10 py-3 bg-white rounded-2xl border border-[#8a48e6] text-[#8a48e6] text-2xl font-normal font-['Nunito']">Перейти в Instagram
-                    </button>
+                    <a href="https://tutor-crm-frontend.vercel.app/" class="hover:bg-[#632DAE] min-h-14 px-10 py-3 bg-[#8a4ae6] rounded-2xl overflow-hidden text-center text-white text-2xl font-medium font-['Nunito']">Перейти в систему
+                    </a>
+                    <a href="https://www.instagram.com/tutoct_edu_crm/" class="hover:bg-[#632DAE] hover:text-white button-secondary min-h-14 px-10 py-3 bg-white rounded-2xl border border-[#8a48e6] text-[#8a48e6] text-2xl font-normal font-['Nunito']">Перейти в Instagram
+                    </a>
                 </div>
             </div>
             <div class="flex justify-center">
@@ -100,7 +99,7 @@
             <div id="text-oct" class="z-10 h-full flex flex-col justify-between items-end">
                 <div>
                     <div class="text-center justify-start text-white text-[32px] font-bold font-['Nunito'] capitalize">Хто ми?</div>
-                    <div class="justify-start"><span class="text-white text-xl font-bold font-['Mulish']">TUTOCT</span><span class="text-white text-xl font-normal font-['Mulish']"> — це сучасна CRM-система, створена спеціально для репетиторів і навчальних центрів. Як восьминіг, що одночасно виконує кілька завдань, наша платформа допомагає автоматизувати рутину та ефективно керувати навчальним процесом.</span></div>
+                    <div class="justify-start"><span class="text-white text-xl font-bold font-['Mulish']">TUTOCT</span><span class="text-white text-xl font-normal font-['Mulish']"> — це сучасна українська CRM-система (edu CRM), створена спеціально для репетиторів, освітніх платформ і навчальних центрів. Як восьминіг, що одночасно виконує кілька завдань, наша онлайн CRM-система допомагає автоматизувати рутину та ефективно керувати навчальним процесом.</span></div>
                 </div>
                 <img class="w-[424px] h-[421px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/octopus-main.png" alt="octopus">
             </div>
@@ -108,7 +107,8 @@
     </div>
     <div class="bg-[#F6EEFF] w-full h-full pt-[78px]">
         <div class="h-12 text-center mx-auto text-[#120c38] text-4xl font-bold font-['Nunito'] capitalize">Наші ключові Можливості</div>
-        <div class="text-center mx-auto py-[40px] text-[#8a48e6] text-xl font-medium font-['Mulish']">TUTOCT пропонує репетиторам все необхідне для зручного та ефективного управління своєю діяльністю.</div>
+        <div class="text-center mx-auto py-[40px] text-[#8a48e6] text-xl font-medium font-['Mulish']">TUTOCT пропонує репетиторам усе необхідне для зручного та ефективного управління своєю діяльністю — усе, що очікуєте від education CRM вже тут:
+        </div>
         <div id="possibilities" class="flex flex-wrap justify-center gap-5 max-w-[1300px] mx-auto">
             <!-- card 1 -->
             <div data-property-1="innative" class="p-card w-[420px] max-h-[255px] bg-white rounded-[20px] flex flex-col p-6 gap-4">
@@ -138,8 +138,8 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Автоматизація через ШІ</div>
-                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">Використовує ШІ для автоматичної перевірки тестів, генерації навчальних матеріалів та створення онлайн-презентацій, що значно спрощує роботу репетиторів.</div>
+                    <div class="max-w-[360px] text-[#120c38] text-2xl font-bold font-['Nunito']">Cloud-сховище для матеріалів</div>
+                    <div class="max-w-[346px] text-[#827ead] text-[15px] font-normal font-['Mulish']">TUTOCT забезпечує простір для зберігання ваших презентацій, документів, відео та PDF-файлів. Це ще одна ознака потужної edu CRM системи.</div>
                 </div>
             </div>
             <!-- card 3 -->

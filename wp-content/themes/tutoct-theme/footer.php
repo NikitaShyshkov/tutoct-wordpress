@@ -28,7 +28,7 @@
                     <!-- Copyright -->
                     <div class="absolute bottom-[77px] mt-12 text-white text-[15px] font-normal font-['Mulish']">
                         <p>© 2025 TUTOCT. Усі права захищені. </p>
-                        <p class="underline w-[260px]">Політика конфіденційності | Умови використання</p>
+                        <a href="#" class="underline w-[260px]">Політика конфіденційності | Умови використання</a>
                         <span></span>
                         <p class="underline"></p>
                     </div>
@@ -38,9 +38,9 @@
                 <div class="flex flex-col gap-5">
                     <h3 class="text-white text-[15px] font-bold font-['Nunito']">Швидкі посилання</h3>
                     <div class="flex flex-col gap-5 text-white text-[15px] font-normal font-['Mulish']">
-                        <span>Політика конфіденційності</span>
-                        <span>Умови використання</span>
-                        <span>Усі права захищені</span>
+                        <a href="#">Політика конфіденційності</a>
+                        <a href="#">Умови використання</a>
+                        <a href="#">Усі права захищені</a>
                     </div>
                 </div>
 
@@ -48,12 +48,22 @@
                 <div class="flex flex-col gap-5">
                     <h3 class="text-white text-[15px] font-bold font-['Nunito']">Швидкі посилання</h3>
                     <div class="flex flex-col gap-5 text-white text-[15px] font-normal font-['Mulish']">
-                        <span>Про нас</span>
-                        <span>Блог</span>
-                        <span>Ціни</span>
-                        <span>Відгуки</span>
-                        <span>Питання відповідь</span>
+                        <a href="<?php echo home_url('/'); ?>" <?php echo is_home() ? 'aria-current="page"' : ''; ?>>Про нас</a>
+                        <a href="<?php echo home_url('/blog/'); ?>" <?php echo (is_page('blog') || is_category() || is_single()) ? 'aria-current="page"' : ''; ?>>Блог</a>
+                        <a href="<?php echo home_url('/price/'); ?>" <?php echo is_page('price') ? 'aria-current="page"' : ''; ?>>Ціни</a>
+                        <a href="<?php echo home_url('/reviews/'); ?>" <?php echo is_page('reviews') ? 'aria-current="page"' : ''; ?>>Відгуки</a>
+                        <a href="<?php echo home_url('/faq/'); ?>" <?php echo is_page('faq') ? 'aria-current="page"' : ''; ?>>Питання відповідь</a>
                     </div>
+
+                    <style>
+                        /* Стили для активной ссылки */
+                        a[aria-current="page"] {
+                            pointer-events: none;
+                            font-weight: bold;
+                            color: #8a48e6;
+                            /* Другие стили */
+                        }
+                    </style>
                 </div>
 
                 <!-- Contacts -->
@@ -62,13 +72,20 @@
                     <div class="flex flex-col gap-5 text-white text-[15px] font-normal font-['Mulish']">
                         <span>tutoctmail@gmail.com</span>
                         <span>+38 (050) 123-45-67</span>
-                        <svg width="156" height="24" viewBox="0 0 156 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.99951 10V14H9.99951V21H13.9995V14H16.9995L17.9995 10H13.9995V8C13.9995 7.73478 14.1049 7.48043 14.2924 7.29289C14.4799 7.10536 14.7343 7 14.9995 7H17.9995V3H14.9995C13.6734 3 12.4017 3.52678 11.464 4.46447C10.5263 5.40215 9.99951 6.67392 9.99951 8V10H6.99951Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M47.9995 20L54.7675 13.232M57.2275 10.772L63.9995 4M47.9995 4L59.7325 20H63.9995L52.2665 4H47.9995Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M91.9995 8C91.9995 6.93913 92.4209 5.92172 93.1711 5.17157C93.9212 4.42143 94.9386 4 95.9995 4H104C105.06 4 106.078 4.42143 106.828 5.17157C107.578 5.92172 108 6.93913 108 8V16C108 17.0609 107.578 18.0783 106.828 18.8284C106.078 19.5786 105.06 20 104 20H95.9995C94.9386 20 93.9212 19.5786 93.1711 18.8284C92.4209 18.0783 91.9995 17.0609 91.9995 16V8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M104.5 7.5V7.51M96.9995 12C96.9995 12.7956 97.3156 13.5587 97.8782 14.1213C98.4408 14.6839 99.2039 15 99.9995 15C100.795 15 101.558 14.6839 102.121 14.1213C102.683 13.5587 103 12.7956 103 12C103 11.2044 102.683 10.4413 102.121 9.87868C101.558 9.31607 100.795 9 99.9995 9C99.2039 9 98.4408 9.31607 97.8782 9.87868C97.3156 10.4413 96.9995 11.2044 96.9995 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M153 7.917V11.951C151.186 11.7709 149.456 11.0961 148 10V14.5C147.999 15.7211 147.655 16.9175 147.006 17.952C146.357 18.9865 145.43 19.8174 144.331 20.3493C143.232 20.8813 142.005 21.0929 140.791 20.9599C139.578 20.8268 138.426 20.3545 137.468 19.5971C136.51 18.8397 135.785 17.8278 135.376 16.6773C134.966 15.5268 134.889 14.2843 135.154 13.0921C135.418 11.8999 136.012 10.8062 136.87 9.93642C137.727 9.0666 138.811 8.4558 140 8.174V12.5C139.659 12.7557 139.389 13.0943 139.215 13.4836C139.042 13.8729 138.971 14.3001 139.01 14.7245C139.048 15.1489 139.194 15.5565 139.434 15.9086C139.674 16.2606 140 16.5455 140.381 16.7361C140.763 16.9266 141.186 17.0166 141.612 16.9975C142.038 16.9783 142.451 16.8507 142.814 16.6266C143.176 16.4026 143.476 16.0896 143.683 15.7174C143.891 15.3452 144 14.9261 144 14.5V3H148.083C148.291 4.2284 148.876 5.36162 149.757 6.24263C150.638 7.12363 151.771 7.70878 153 7.917Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <div class="w-full flex justify-around">
+                            <a href="https://www.facebook.com/profile.php?id=61574093519970">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10V14H10V21H14V14H17L18 10H14V8C14 7.73478 14.1054 7.48043 14.2929 7.29289C14.4804 7.10536 14.7348 7 15 7H18V3H15C13.6739 3 12.4021 3.52678 11.4645 4.46447C10.5268 5.40215 10 6.67392 10 8V10H7Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/tutoct_edu_crm/">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4H16C17.0609 4 18.0783 4.42143 18.8284 5.17157C19.5786 5.92172 20 6.93913 20 8V16C20 17.0609 19.5786 18.0783 18.8284 18.8284C18.0783 19.5786 17.0609 20 16 20H8C6.93913 20 5.92172 19.5786 5.17157 18.8284C4.42143 18.0783 4 17.0609 4 16V8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16.5 7.5V7.51M9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+
+                        </div>
                     </div>
                 </div>
             </div>

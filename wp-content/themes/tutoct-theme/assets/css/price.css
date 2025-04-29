@@ -7,6 +7,26 @@ ul{
     list-style-position: inside !important;
 }
 
+.card:hover{
+    background-color: #8A48E6 !important;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+}
+
+.card:hover div{
+    color: white;
+}
+
+.card:hover path{
+    stroke: white;
+}
+.card:hover:nth-child(1) path,
+.card:hover:nth-child(2) path,
+.card:hover:nth-child(4) path{
+    fill: white;
+}
+
 @media (max-width: 991px) {
     #block-1,
     #block-3{

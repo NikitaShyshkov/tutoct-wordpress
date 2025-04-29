@@ -33,11 +33,13 @@
     }
 }
 @media (max-width: 1100px) {
-    #block-top{
+    #block-top,
+    #block-add-review{
         padding: 16px !important;
     }
     #block-top-rev{
         flex-direction: column;
+        margin-bottom: 0 !important;
     }
     .rev-card-123{
         max-width: 100px;
@@ -46,7 +48,7 @@
         display: none;
     }
     .review-card {
-        width: 300px !important; 
+        width: 343px !important; 
         align-items: center;
     }
     .name-stars-flex{

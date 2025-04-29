@@ -166,4 +166,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    ///////////////////////////
+    const div1 = document.querySelectorAll('.carousel-item');
+    const div2 = document.querySelector('#block-add-review');
+
+    // Функция для копирования размеров
+    function copyDimensions() {
+        if (div1 && div2) {
+            // Получаем размеры .2
+            const width = div2.offsetWidth;
+            const height = div2.offsetHeight;
+
+            // Применяем размеры к .1
+            div1.style.width = `${width}px`;
+            div1.style.height = `${height}px`;
+        }
+    }
+
+    // Вызываем функцию при загрузке страницы
+    copyDimensions();
+
+    // Обновляем размеры при изменении окна (для адаптивности)
+    window.addEventListener('resize', copyDimensions);
 });

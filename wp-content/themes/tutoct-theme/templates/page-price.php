@@ -9,7 +9,7 @@ get_header();
     <div id="block-1" class="py-[40px] px-[150px] flex">
         <div class="h-full w-full flex flex-col gap-5">
             <div class="max-w-[880px] text-black text-5xl font-bold font-['Nunito']">Розширюй свої можливості з нашими підписками!</div>
-            <div class="max-w-[861px] text-[#827ead] text-xl font-normal font-['Mulish']">Lorem ipsum dolor sit amet consectetur. Elit amet magna mauris nunc. Ipsum in id nulla at suspendisse aliquet senectus turpis aliquet. Sollicitudin egestas dolor ut vitae diam pellentesque ut pulvinar mi. Nibh fermentum vitae nunc tortor non. Aliquet ultrices mauris a viverra sodales id rhoncus. <br /><br />Nunc mattis vel consectetur posuere in nunc sit morbi mauris. Ut suscipit pharetra adipiscing amet. Fermentum nibh augue risus viverra nisl mattis in volutpat odio. Suspendisse nullam eleifend interdum nisi lorem lacus amet.</div>
+            <div class="max-w-[861px] text-[#827ead] text-xl font-normal font-['Mulish']">Обирайте тариф, який відповідає вашим потребам — від базового до професійного. TUTOCT пропонує гнучкі ціни CRM, зручну навігацію між планами та навіть безкоштовну CRM для старту роботи. Проста CRM система онлайн — ідеальна для викладачів та курсів. <br /><br />Ми сформували ціну кожного тарифу максимально об'єктивно — відповідно до кількості функцій та можливостей, які відкриває кожен план. Хочете більше інтеграцій, хмарного простору чи ШІ-інструментів? Ви обираєте, а наша система адаптується до ваших освітніх цілей.</div>
         </div>
         <img id="oct-main" src="<?php echo get_template_directory_uri(); ?>/assets/images/oct-price-main.png" alt="">
     </div>
@@ -18,7 +18,7 @@ get_header();
         <!-- Цены -->
         <div id="price-blocks" class="flex gap-5 mt-10 justify-center">
             <!-- Start -->
-            <div class="min-w-[310px] min-h-[463px] relative overflow-hidden bg-white rounded-[20px]">
+            <div class="min-w-[310px] min-h-[463px] transition-shadow duration-200 hover:shadow-[0_0_0_3px_#8A48E6] relative overflow-hidden bg-white rounded-[20px]">
                 <div class="flex flex-col h-full justify-between p-5">
                     <div class="flex flex-col gap-4">
                         <div class="text-black text-2xl font-bold font-['Nunito']">Щупальце старт</div>
@@ -35,14 +35,14 @@ get_header();
                     </div>
                     <div class="flex flex-col items-center gap-4">
                         <div class="text-center text-black text-2xl font-bold font-['Nunito']">Безкоштовно</div>
-                        <div data-property-1="Active" class="max-w-[270px] h-10 px-4 py-2 bg-[#8a48e6] rounded-[40px] flex justify-center items-center gap-2.5">
+                        <div data-property-1="Active" class="max-w-[270px] w-full h-10 px-4 py-2 bg-[#8a48e6] rounded-[40px] flex justify-center items-center gap-2.5">
                             <div class="text-white text-[15px] font-bold font-['Nunito']">Детальніше</div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Flex -->
-            <div class="min-w-[310px] min-h-[463px] h-full relative overflow-hidden bg-white rounded-[20px]">
+            <div class="min-w-[310px] min-h-[463px] transition-shadow duration-200 hover:shadow-[0_0_0_3px_#8A48E6] h-full relative overflow-hidden bg-white rounded-[20px]">
                 <div class="flex flex-col gap-5 min-h-[463px] justify-between p-5">
                     <div class="text-black text-2xl font-bold font-['Nunito']">Гнучкий окто</div>
                     <ul class="max-w-[140px] list-inside text-black text-xs font-normal font-['Mulish']">
@@ -61,7 +61,7 @@ get_header();
                 </div>
             </div>
             <!-- Master -->
-            <div class="min-w-[310px] min-h-[463px] relative overflow-hidden bg-white rounded-[20px]">
+            <div class="min-w-[310px] min-h-[463px] transition-shadow duration-200 hover:shadow-[0_0_0_3px_#8A48E6] relative overflow-hidden bg-white rounded-[20px]">
                 <div class="flex flex-col h-full min-h-[463px] justify-between p-5">
                     <div class="text-black text-2xl font-bold font-['Nunito']">Майстер восьминіг</div>
                     <ul class="max-w-[140px] list-inside text-black text-xs font-normal font-['Mulish']">
@@ -80,7 +80,7 @@ get_header();
                 </div>
             </div>
             <!-- Capitan -->
-            <div class="min-w-[310px] min-h-[463px] relative overflow-hidden bg-white rounded-[20px]">
+            <div class="min-w-[310px] min-h-[463px] transition-shadow duration-200 hover:shadow-[0_0_0_3px_#8A48E6] relative overflow-hidden bg-white rounded-[20px]">
                 <div class="flex flex-col h-full min-h-[463px] justify-between p-5">
                     <div class="text-black text-2xl font-bold font-['Nunito']">Капітан ОктоПРО</div>
                     <ul class="max-w-[140px] list-inside text-black text-xs font-normal font-['Mulish']">

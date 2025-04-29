@@ -21,7 +21,7 @@ get_header();
                 while ($faq_query->have_posts()) : $faq_query->the_post();
             ?>
                 <div class="expandable-component w-full bg-white rounded-[15px] overflow-hidden">
-                    <div class="header flex items-center h-[90px] px-[37px] cursor-pointer">
+                    <div class="header flex items-center min-h-[100px] px-[37px] cursor-pointer">
                         <div class="icon-wrapper mr-[37px]">
                             <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.7917 14L13.75 14M13.75 14L2.25 2.5M13.75 14L2.25 25.5" stroke="#8A48E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
