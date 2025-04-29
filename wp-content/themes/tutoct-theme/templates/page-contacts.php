@@ -57,17 +57,12 @@ get_header();
                 <div class="text-[#120c38] text-2xl font-bold font-['Mulish']">Соц. Мережі</div>
                 <div class="text-[#120c38] text-[15px] font-normal font-['Mulish']">Слідкуйте за нами в соцмережах, щоб бути в курсі всіх новин, оновлень та корисних порад! Залишайте свої коментарі, запитання чи відгуки — ми завжди раді спілкуванню та готові допомогти!</div>
                 <div class="flex justify-start items-center gap-2.5">
-                    <div class="flex overflow-hidden w-10 h-10 bg-white rounded-[40px] border border-[#d7d7d7]">
+                    <a href="https://www.facebook.com/profile.php?id=61574093519970" class="flex overflow-hidden w-10 h-10 bg-white hover:bg-gray-100 rounded-[40px] border border-[#d7d7d7]">
                         <svg class="mx-auto my-auto" width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 8V12H4V19H8V12H11L12 8H8V6C8 5.73478 8.10536 5.48043 8.29289 5.29289C8.48043 5.10536 8.73478 5 9 5H12V1H9C7.67392 1 6.40215 1.52678 5.46447 2.46447C4.52678 3.40215 4 4.67392 4 6V8H1Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
-                    <div class="flex overflow-hidden w-10 h-10 bg-white rounded-[40px] border border-[#d7d7d7]">
-                        <svg class="mx-auto my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 17L7.768 10.232M10.228 7.772L17 1M1 1L12.733 17H17L5.267 1H1Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <div class="flex relative overflow-hidden w-10 h-10 bg-white rounded-[40px] border border-[#d7d7d7]">
+                    </a>
+                    <a href="https://www.instagram.com/tutoct_edu_crm/" class="flex relative overflow-hidden w-10 h-10 bg-white hover:bg-gray-100 rounded-[40px] border border-[#d7d7d7]">
                         <div class="relative h-[18px] w-[18px] m-auto">
                             <div data-svg-wrapper class="left-0 top-0 absolute">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,12 +75,7 @@ get_header();
                                 </svg>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex overflow-hidden w-10 h-10 bg-white rounded-[40px] border border-[#d7d7d7]">
-                        <svg class="mx-auto my-auto" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 5.917V9.951C17.1861 9.77094 15.4565 9.09605 14 8V12.5C13.9997 13.7211 13.6555 14.9175 13.0067 15.952C12.3579 16.9865 11.4308 17.8174 10.3317 18.3493C9.2325 18.8813 8.00571 19.0929 6.79185 18.9599C5.57799 18.8268 4.42615 18.3545 3.46831 17.5971C2.51046 16.8397 1.78534 15.8278 1.37603 14.6773C0.966714 13.5268 0.889763 12.2843 1.15399 11.0921C1.41821 9.8999 2.01293 8.80624 2.87 7.93642C3.72707 7.0666 4.81183 6.4558 6 6.174V10.5C5.65909 10.7557 5.38919 11.0943 5.21594 11.4836C5.04269 11.8729 4.97183 12.3001 5.0101 12.7245C5.04837 13.1489 5.1945 13.5565 5.4346 13.9086C5.6747 14.2606 6.00081 14.5455 6.38197 14.7361C6.76312 14.9266 7.18666 15.0166 7.61237 14.9975C8.03808 14.9783 8.45183 14.8507 8.81433 14.6266C9.17683 14.4026 9.47604 14.0896 9.68356 13.7174C9.89107 13.3452 10 12.9261 10 12.5V1H14.083C14.2912 2.2284 14.8764 3.36162 15.7574 4.24263C16.6384 5.12363 17.7716 5.70878 19 5.917Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

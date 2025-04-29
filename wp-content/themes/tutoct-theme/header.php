@@ -23,31 +23,40 @@
         </button>
 
         <!-- Logo -->
-        <img id="logo" class="w-[68px] h-16 m-[50px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-navbar.png" alt="Logo" />
+        <a href="<?php echo home_url('/'); ?>"
+            <?php echo is_home() ? 'aria-current="page"' : ''; ?>>
+            <img id="logo" class="w-[68px] h-16 m-[50px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-navbar.png" alt="Logo" />
+        </a>
 
         <!-- Navigation -->
         <nav id="nav-menu" class="flex items-center justify-center h-full gap-12 mr-[62px] md:flex md:items-center md:gap-12">
-            <a href="/" class="<?php echo is_home() ? 'active' : ''; ?> flex flex-col items-center justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+            <a href="/" class="<?php echo is_home() ? 'active' : ''; ?> flex flex-col items-center justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']"
+            <?php echo is_home() ? 'aria-current="page"' : ''; ?>>
                 <p class="m-auto">Про нас</p>
                 <div class="mx-auto w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/blog" class="<?php echo (is_page('blog') || is_single()) ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+            <a href="/blog" class="<?php echo (is_page('blog') || is_single()) ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']"
+            <?php echo (is_page('blog') || is_category() || is_single()) ? 'aria-current="page"' : ''; ?>>
                 <p class="m-auto">Блог</p>
                 <div class="mx-auto w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/contacts" class="<?php echo is_page('contacts') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+            <a href="/contacts" class="<?php echo is_page('contacts') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']"
+            <?php echo is_page('contacts') ? 'aria-current="page"' : ''; ?>>
                 <p class="m-auto">Контакти</p>
                 <div class="mx-auto w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/price" class="<?php echo is_page('price') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+            <a href="/price" class="<?php echo is_page('price') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']"
+            <?php echo is_page('price') ? 'aria-current="page"' : ''; ?>>
                 <p class="m-auto">Ціни</p>
                 <div class="mx-auto w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/reviews" class="<?php echo is_page('reviews') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+            <a href="/reviews" class="<?php echo is_page('reviews') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']"
+            <?php echo is_page('reviews') ? 'aria-current="page"' : ''; ?>>
                 <p class="m-auto">Відгуки</p>
                 <div class="mx-auto w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
-            <a href="/faq" class="<?php echo is_page('faq') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']">
+            <a href="/faq" class="<?php echo is_page('faq') ? 'active' : ''; ?> flex flex-col justify-between h-full text-center text-[#120c38] text-2xl font-normal font-['Nunito']"
+            <?php echo is_page('faq') ? 'aria-current="page"' : ''; ?>>
                 <p class="m-auto">Питання відповідь</p>
                 <div class="mx-auto w-20 h-2.5 rounded-tl-[18px] rounded-tr-[19px]"></div>
             </a>
